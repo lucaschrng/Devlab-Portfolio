@@ -52,36 +52,49 @@ nav ul li:nth-child(3) {
   height: 80vh;
   grid-column: 1;
   grid-row: 1;
+  scale: 0.5;
+  rotate: -35deg;
+  transition: all 0.7s ease 0s;
 }
 .circles-container img:nth-child(1) {
   opacity: 0.9090909091;
+  transition-delay: calc((1-1) * 0.03s);
 }
 .circles-container img:nth-child(2) {
   opacity: 0.8181818182;
+  transition-delay: calc((2-1) * 0.03s);
 }
 .circles-container img:nth-child(3) {
   opacity: 0.7272727273;
+  transition-delay: calc((3-1) * 0.03s);
 }
 .circles-container img:nth-child(4) {
   opacity: 0.6363636364;
+  transition-delay: calc((4-1) * 0.03s);
 }
 .circles-container img:nth-child(5) {
   opacity: 0.5454545455;
+  transition-delay: calc((5-1) * 0.03s);
 }
 .circles-container img:nth-child(6) {
   opacity: 0.4545454545;
+  transition-delay: calc((6-1) * 0.03s);
 }
 .circles-container img:nth-child(7) {
   opacity: 0.3636363636;
+  transition-delay: calc((7-1) * 0.03s);
 }
 .circles-container img:nth-child(8) {
   opacity: 0.2727272727;
+  transition-delay: calc((8-1) * 0.03s);
 }
 .circles-container img:nth-child(9) {
   opacity: 0.1818181818;
+  transition-delay: calc((9-1) * 0.03s);
 }
 .circles-container img:nth-child(10) {
   opacity: 0.0909090909;
+  transition-delay: calc((10-1) * 0.03s);
 }
 
 /*# sourceMappingURL=main.css.map */

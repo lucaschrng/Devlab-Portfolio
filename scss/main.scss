@@ -64,10 +64,14 @@ nav {
         height: 80vh;
         grid-column: 1;
         grid-row: 1;
+        scale: 0.5;
+        rotate: -35deg;
+        transition: all .7s ease 0s;
 
         @for $var from 1 to 11 {
             &:nth-child(#{$var}) {
                 opacity: 1 - $var/11;
+                transition-delay: calc((#{$var}-1)*0.03s);
             }
         }
     }
