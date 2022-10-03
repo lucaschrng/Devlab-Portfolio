@@ -31,8 +31,22 @@ nav ul li {
   width: 33.3333333333%;
 }
 nav ul li a {
+  position: relative;
   color: #fff;
   text-decoration: none;
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -0.125rem;
+  left: 0;
+  background-color: #fff;
+  height: 0.125rem;
+  width: 0%;
+  transition: all 0.2s ease 0s;
+}
+nav ul li a:hover::after {
+  width: 100%;
 }
 nav ul li:nth-child(2) {
   text-align: center;
