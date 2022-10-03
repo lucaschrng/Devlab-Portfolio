@@ -1,11 +1,56 @@
+$clr-black: #000;
+$clr-white: #fff;
+$bg-color: $clr-black;
+$font-color: $clr-white;
+$fs-small: 1.5rem;
+$fw-regular: 500;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
   
 body {
-    background-color: rgb(0, 0, 0);
+    background-color: $bg-color;
+    color: $font-color;
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-size: $fs-small;
+    font-weight: $fw-regular;
+}
+
+nav {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+        width: 100%;
+        list-style: none;
+        display: flex;
+
+        li {
+            width: calc(100%/3);
+
+            a {
+                color: $clr-white;
+                text-decoration: none;
+            }
+
+            &:nth-child(2) {
+                text-align: center;
+            }
+
+            &:nth-child(3) {
+                text-align: right;
+            }
+        }
+    }
 }
 
 .circles-container {
@@ -16,13 +61,13 @@ body {
     align-items: center;
 
     img {
-        height: 70vh;
+        height: 80vh;
         grid-column: 1;
         grid-row: 1;
 
         @for $var from 1 to 11 {
             &:nth-child(#{$var}) {
-                opacity: 1 - $var/15;
+                opacity: 1 - $var/11;
             }
         }
     }
