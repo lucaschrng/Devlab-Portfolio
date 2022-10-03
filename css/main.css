@@ -11,10 +11,44 @@ body {
 .circles-container {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 100vh;
+  justify-items: center;
+  align-items: center;
 }
 .circles-container img {
+  height: 70vh;
   grid-column: 1;
   grid-row: 1;
+}
+.circles-container img:nth-child(1) {
+  opacity: 0.9333333333;
+}
+.circles-container img:nth-child(2) {
+  opacity: 0.8666666667;
+}
+.circles-container img:nth-child(3) {
+  opacity: 0.8;
+}
+.circles-container img:nth-child(4) {
+  opacity: 0.7333333333;
+}
+.circles-container img:nth-child(5) {
+  opacity: 0.6666666667;
+}
+.circles-container img:nth-child(6) {
+  opacity: 0.6;
+}
+.circles-container img:nth-child(7) {
+  opacity: 0.5333333333;
+}
+.circles-container img:nth-child(8) {
+  opacity: 0.4666666667;
+}
+.circles-container img:nth-child(9) {
+  opacity: 0.4;
+}
+.circles-container img:nth-child(10) {
+  opacity: 0.3333333333;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -4,16 +4,26 @@
     box-sizing: border-box;
   }
   
-  body {
+body {
     background-color: rgb(0, 0, 0);
-  }
-  
-  .circles-container {
-      display: grid;
-      grid-template-columns: 1fr;
-  
-      img {
+}
+
+.circles-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh;
+    justify-items: center;
+    align-items: center;
+
+    img {
+        height: 70vh;
         grid-column: 1;
         grid-row: 1;
-      }
-  }
+
+        @for $var from 1 to 11 {
+            &:nth-child(#{$var}) {
+                opacity: 1 - $var/15;
+            }
+        }
+    }
+}
