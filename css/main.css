@@ -1,5 +1,6 @@
 :root {
   --scroll-translate: 0px 50px;
+  scroll-snap-type: y mandatory;
 }
 
 * {
@@ -14,6 +15,17 @@ body {
   font-family: neue-haas-grotesk-display, sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
@@ -31,22 +43,32 @@ nav ul {
   display: flex;
   flex-direction: column;
 }
+nav ul .description {
+  opacity: 0.7;
+}
 nav ul li a {
   position: relative;
   color: #fff;
   text-decoration: none;
 }
-nav ul li a::after {
+nav ul li a span {
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+nav ul li a:hover span {
+  opacity: 1;
+}
+nav ul:nth-child(1) li a::after {
   content: "";
   position: absolute;
-  bottom: -0.125rem;
+  bottom: 0;
   left: 0;
   background-color: #fff;
   height: 0.05em;
   width: 0%;
   transition: all 0.2s ease 0s;
 }
-nav ul li a:hover::after {
+nav ul:nth-child(1) li a:hover::after {
   width: 100%;
 }
 nav ul:nth-child(2) {
@@ -72,14 +94,19 @@ nav .scroll-down-icon {
 }
 
 .circles-container {
+  position: fixed;
+  z-index: -1;
   display: grid;
+  width: 100%;
   grid-template-columns: 1fr;
   grid-template-rows: 100vh;
   justify-items: center;
   align-items: center;
+  overflow: hidden;
+  transition: all 1s ease;
 }
 .circles-container img {
-  height: 80vh;
+  height: 90vh;
   grid-column: 1;
   grid-row: 1;
   scale: 0.5;
@@ -125,6 +152,26 @@ nav .scroll-down-icon {
 .circles-container img:nth-child(10) {
   opacity: 0.3333333333;
   transition-delay: calc((10-1) * 0.08s);
+}
+
+.page0 {
+  scroll-snap-align: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.intro {
+  scroll-snap-align: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.intro__content {
+  width: 25ch;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

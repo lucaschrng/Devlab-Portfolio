@@ -7,6 +7,7 @@ $fw-regular: 500;
 
 :root {
     --scroll-translate: 0px 50px;
+    scroll-snap-type: y mandatory;
 }
 
 * {
@@ -21,6 +22,18 @@ body {
     font-family: neue-haas-grotesk-display, sans-serif;
     font-size: $fs-small;
     font-weight: $fw-regular;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
 }
 
 nav {
@@ -38,15 +51,30 @@ nav {
         display: flex;
         flex-direction: column;
 
+        .description {
+            opacity: 0.7;
+        }
+
         li a {
             position: relative;
             color: $clr-white;
             text-decoration: none;
 
+            span {
+                opacity: 0;
+                transition: all .2s ease;
+            }
+
+            &:hover span {
+                opacity: 1;
+            }
+        }
+
+        &:nth-child(1) li a {
             &::after {
                 content: '';
                 position: absolute;
-                bottom: -0.125rem;
+                bottom: 0;
                 left: 0;
                 background-color: $font-color;
                 height: 0.05em;
@@ -83,39 +111,23 @@ nav {
         align-self: flex-end;
         position: relative;
         transition: all .7s ease;
-
-        // transition: all .5s ease 0s;
-        // position: relative;
-        // width: 100%;
-        // text-align: center;
-        // align-self: flex-end;
-
-        // &::after {
-        //     content: '';
-        //     height: 20px;
-        //     width: 100%;
-        //     position: absolute;
-        //     background-image: url(/img/down-arrow.svg);
-        //     background-repeat: no-repeat;
-        //     background-position: center;
-        //     filter: invert(1);
-        //     bottom: -20px;
-        //     left: 0;
-        //     translate: var(--scroll-translate);
-        //     transition: all .5s ease 0s;
-        // }
     }
 }
 
 .circles-container {
+    position: fixed;
+    z-index: -1;
     display: grid;
+    width: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: 100vh;
     justify-items: center;
     align-items: center;
+    overflow: hidden;
+    transition: all 1s ease;
 
     img {
-        height: 80vh;
+        height: 90vh;
         grid-column: 1;
         grid-row: 1;
         scale: 0.5;
@@ -128,5 +140,26 @@ nav {
                 transition-delay: calc((#{$var}-1)*0.08s);
             }
         }
+    }
+}
+
+.page0 {
+    scroll-snap-align: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.intro {
+    scroll-snap-align: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease;
+
+    &__content {
+        width: 25ch;
+        text-align: center;
     }
 }
