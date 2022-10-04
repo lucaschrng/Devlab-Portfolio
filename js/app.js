@@ -18,7 +18,7 @@ setTimeout(() => {
     circles.forEach(circle => {
         circle.style.transitionDuration = "4s";
     });
-}, 700);
+}, 4800);
 
 // navButtons.forEach(button => {
 //     button.style.translate = '0px 0px';

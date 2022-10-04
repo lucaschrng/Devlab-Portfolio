@@ -92,7 +92,7 @@ nav ul .scroll-down span::after {
   grid-row: 1;
   scale: 0.5;
   rotate: -35deg;
-  transition: all 0.7s ease;
+  transition: all 4.8s ease;
 }
 .circles-container img:nth-child(1) {
   opacity: 0.9090909091;
