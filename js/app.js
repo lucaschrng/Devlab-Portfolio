@@ -30,6 +30,16 @@ circles.forEach(circle => {
     circle.style.rotate = '0deg';
 });
 
+circleContainer.addEventListener('mousemove', (e) => {
+    let y = 0;
+    let x = 0;
+    circles.forEach(circle => {
+        y = (e.clientY - (window.innerHeight/2))/2;
+        x = (e.clientX - (window.innerWidth/2))/2;
+        console.log(x + "px " + y + "px");
+    });
+})
+
 inverval_timer = setInterval(() => { 
     if (scaleFixed) {
         randScale = 1;
@@ -120,5 +130,3 @@ for (let i = 0; i < navButtons.length; i++) {
     })
     
 }
-
-console.log(pages);

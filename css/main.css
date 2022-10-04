@@ -107,13 +107,20 @@ nav .scroll-down-icon {
   transition: all 0.7s ease;
 }
 
-.circles-container {
+.circles-wrapper {
+  height: 100vh;
+  width: 100vw;
   position: fixed;
-  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circles-container {
+  z-index: 0;
+  width: fit-content;
   display: grid;
-  width: 100%;
   grid-template-columns: 1fr;
-  grid-template-rows: 100vh;
   justify-items: center;
   align-items: center;
   overflow: hidden;
@@ -121,6 +128,7 @@ nav .scroll-down-icon {
 }
 .circles-container img {
   height: 90vh;
+  z-index: -1;
   grid-column: 1;
   grid-row: 1;
   scale: 0.5;
@@ -167,11 +175,22 @@ nav .scroll-down-icon {
   opacity: 0.3333333333;
   transition-duration: calc(10*0.2s + 3s);
 }
+.circles-container .hoverCircles {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
+  scale: 0.65;
+}
 
 .page0 {
   scroll-snap-align: center;
   height: 100vh;
   width: 100%;
+}
+.page0 ~ div {
+  z-index: 1;
 }
 
 .intro {
