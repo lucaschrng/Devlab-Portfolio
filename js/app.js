@@ -1,6 +1,10 @@
 let circles = document.querySelectorAll('.circles-container img');
 let navButtons = document.querySelectorAll('nav ul:nth-child(1) li');
 let homePage = document.querySelector('.circles-container');
+let scrollDown = document.querySelector('.scroll-down');
+let scrollDownIcon = window.getComputedStyle(scrollDown, "::after");;
+console.log(scrollDown.style);
+console.log(scrollDownIcon);
 let randScale = 0;
 let randRotate = 0;
 let randDirection = 1;
@@ -21,7 +25,7 @@ setTimeout(() => {
 // });
 
 
-inverval_timer = setInterval(function() { 
+inverval_timer = setInterval(() => { 
     randScale = 0.7 + (Math.floor(Math.random() * 30))/100;
     randDirection = Math.floor(Math.random() * 2);
     if(randDirection == 0) {
@@ -36,3 +40,12 @@ inverval_timer = setInterval(function() {
         circle.style.rotate = randRotate + 'deg';
     });
 }, 4900);
+
+interval_timer2 = setInterval(() => {
+    scrollDown.style.translate = '0px ' + -1.5 + 'em';
+    document.documentElement.style.setProperty('--scroll-translate', "0px 0px");
+    setTimeout(() => {
+        scrollDown.style.translate = '0px 0px';
+        document.documentElement.style.setProperty('--scroll-translate', "0px 50px");
+    }, 4000);
+}, 12000);

@@ -1,3 +1,7 @@
+:root {
+  --scroll-translate: 0px 50px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +17,7 @@ body {
 }
 
 nav {
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 100%;
   padding: 25px;
@@ -53,6 +57,26 @@ nav ul li:nth-child(2) {
 }
 nav ul li:nth-child(3) {
   text-align: right;
+}
+nav ul .scroll-down {
+  transition: all 0.5s ease 0s;
+}
+nav ul .scroll-down span {
+  position: relative;
+}
+nav ul .scroll-down span::after {
+  content: "";
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  background-image: url(/img/down-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(1);
+  bottom: -50px;
+  left: 0;
+  translate: var(--scroll-translate);
+  transition: all 0.5s ease 0s;
 }
 
 .circles-container {
