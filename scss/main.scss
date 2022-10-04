@@ -153,7 +153,7 @@ nav {
         @for $var from 1 to 11 {
             &:nth-child(#{$var}) {
                 opacity: 1 - calc($var/15);
-                transition-delay: calc((#{$var}-1)*0.08s);
+                transition-duration: calc(#{$var}*0.2s + 3s);
             }
         }
     }

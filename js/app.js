@@ -30,12 +30,6 @@ circles.forEach(circle => {
     circle.style.rotate = '0deg';
 });
 
-setTimeout(() => {
-    circles.forEach(circle => {
-        circle.style.transitionDuration = "4s";
-    });
-}, 4800);
-
 inverval_timer = setInterval(() => { 
     if (scaleFixed) {
         randScale = 1;
@@ -43,6 +37,7 @@ inverval_timer = setInterval(() => {
     else {
         randScale = 0.7 + (Math.floor(Math.random() * 30))/100;
     }
+
     randDirection = Math.floor(Math.random() * 2);
     if(randDirection == 0) {
         randDirection = -1;
