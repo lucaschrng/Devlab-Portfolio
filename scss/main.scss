@@ -18,6 +18,7 @@ $fw-medium: 600;
 }
   
 body {
+    cursor: none;
     background-color: $bg-color;
     color: $font-color;
     font-family: neue-haas-grotesk-display, sans-serif;
@@ -30,6 +31,19 @@ body {
     &::-webkit-scrollbar {
         display: none;
     }
+}
+
+.cursor {
+    height: $fs-small;
+    width: $fs-small;
+    translate: -50% -50%;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 50%;
+    backdrop-filter: invert(1);
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 main {
@@ -66,7 +80,8 @@ nav {
                 transition: all .2s ease;
             }
 
-            &:hover span {
+            &:hover span,
+            &.active span {
                 opacity: 1;
             }
         }

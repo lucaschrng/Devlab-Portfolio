@@ -10,6 +10,7 @@
 }
 
 body {
+  cursor: none;
   background-color: #000;
   color: #fff;
   font-family: neue-haas-grotesk-display, sans-serif;
@@ -21,6 +22,19 @@ body {
 }
 body::-webkit-scrollbar {
   display: none;
+}
+
+.cursor {
+  height: 1.25rem;
+  width: 1.25rem;
+  translate: -50% -50%;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 50%;
+  backdrop-filter: invert(1);
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 main {
@@ -55,7 +69,7 @@ nav ul li a span {
   opacity: 0;
   transition: all 0.2s ease;
 }
-nav ul li a:hover span {
+nav ul li a:hover span, nav ul li a.active span {
   opacity: 1;
 }
 nav ul:nth-child(1) li a::after {

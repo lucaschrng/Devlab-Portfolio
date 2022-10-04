@@ -1,3 +1,4 @@
+let cursor = document.querySelector('.cursor');
 let circleContainer = document.querySelector('.circles-container');
 let circles = document.querySelectorAll('.circles-container img');
 let homePage = document.querySelector('.circles-container');
@@ -6,18 +7,23 @@ let scrollDown = document.querySelector('.scroll-down');
 let scrollDownIcon = document.querySelector('.scroll-down-icon');
 let scrollAnim = true;
 let scrollDownHeight = scrollDown.offsetHeight;
-let intro = document.querySelector('.intro')
-let introY = intro.getBoundingClientRect().top;
-let studies = document.querySelector('.studies');
-let studiesY = studies.getBoundingClientRect().top;
 let randScale = 0;
 let scaleFixed = false;
 let randRotate = 0;
 let randDirection = 1;
 let pages = document.querySelectorAll('.page0 ~ div');
+let introY = pages[0].getBoundingClientRect().top;
+let studiesY = pages[1].getBoundingClientRect().top;
+let skillsY = pages[2].getBoundingClientRect().top;
 let navButtons = document.querySelectorAll('nav ul:nth-child(3) li');
+let navButtonsCircle = document.querySelectorAll('nav ul:nth-child(3) li a');
+let homeButton = document.querySelector('nav ul li a');
 
-console.log(pages);
+window.addEventListener('mousemove', (e) => {
+    console.log(e.offsetY);
+    cursor.style.top = e.clientY + "px";
+    cursor.style.left = e.clientX + "px";
+})
 
 circles.forEach(circle => {
     circle.style.scale = '1';
@@ -67,8 +73,9 @@ interval_timer2 = setInterval(() => {
 }, 10000);
 
 document.addEventListener('scroll', () => {
-    introY = intro.getBoundingClientRect().top;
-    studiesY = studies.getBoundingClientRect().top;
+    introY = pages[0].getBoundingClientRect().top;
+    studiesY = pages[1].getBoundingClientRect().top;
+    skillsY = pages[2].getBoundingClientRect().top;
     if (introY < 400) {
         circleContainer.style.opacity = 0.4;
         scaleFixed = true;
@@ -82,7 +89,30 @@ document.addEventListener('scroll', () => {
 
     if (studiesY < 400) {
         circleContainer.style.opacity = 0;
+        navButtonsCircle[0].classList.add("active");
     }
+
+    else {
+        navButtonsCircle[0].classList.remove("active");
+    }
+
+    if (skillsY < 400) {
+        circleContainer.style.opacity = 0;
+        navButtonsCircle[1].classList.add("active");
+        navButtonsCircle[0].classList.remove("active");
+    }
+
+    else {
+        navButtonsCircle[1].classList.remove("active");
+    }
+})
+
+homeButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
 })
 
 for (let i = 0; i < navButtons.length; i++) {
