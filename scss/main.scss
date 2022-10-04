@@ -157,22 +157,14 @@ nav {
         scale: 0.5;
         rotate: -35deg;
         transition: all 4.8s ease;
-
-        @for $var from 1 to 11 {
-            &:nth-child(#{$var}) {
-                opacity: 1 - calc($var/15);
-                transition-duration: calc(#{$var}*0.2s + 3s);
-            }
-        }
     }
 
-    .hoverCircles {
-        height: 100%;
-        width: 100%;
+    .hover-circles {
+        height: 50%;
+        width: 50%;
         z-index: 1;
         grid-column: 1;
         grid-row: 1;
-        scale: 0.65;
     }
 }
 

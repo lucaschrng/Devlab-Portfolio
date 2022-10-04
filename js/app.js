@@ -18,9 +18,10 @@ let skillsY = pages[2].getBoundingClientRect().top;
 let navButtons = document.querySelectorAll('nav ul:nth-child(3) li');
 let navButtonsCircle = document.querySelectorAll('nav ul:nth-child(3) li a');
 let homeButton = document.querySelector('nav ul li a');
+let hoverCircles = document.querySelector('.hover-circles')
+let stopAnim = false;
 
 window.addEventListener('mousemove', (e) => {
-    console.log(e.offsetY);
     cursor.style.top = e.clientY + "px";
     cursor.style.left = e.clientX + "px";
 })
@@ -30,14 +31,36 @@ circles.forEach(circle => {
     circle.style.rotate = '0deg';
 });
 
-circleContainer.addEventListener('mousemove', (e) => {
+for (let index = 1; index < circles.length+1; index++) {
+    circles[index-1].style.opacity = 1 - (index-1)/15;
+}
+
+hoverCircles.addEventListener('mousemove', (e) => {
     let y = 0;
     let x = 0;
-    circles.forEach(circle => {
+    stopAnim = true;
+    for (let index = 1; index < circles.length+1; index++) {
         y = (e.clientY - (window.innerHeight/2))/2;
         x = (e.clientX - (window.innerWidth/2))/2;
-        console.log(x + "px " + y + "px");
-    });
+        setTimeout(() => {    
+            circles[index-1].style.translate = x + "px " + y + "px";
+        }, (index - 1)*10);
+        circles[index-1].style.scale = 0.4;
+        circles[index-1].style.transitionDuration = "0s";
+    }
+})
+
+hoverCircles.addEventListener('mouseleave', () => {
+    stopAnim = false;
+    for (let index = 1; index < circles.length+1; index++) {
+        console.log("hello");
+        setTimeout(() => {
+            circles[index-1].style.translate = "0px 0px";
+        }, ((index -1)*10+1));
+        circles[index-1].style.scale = 1;
+        circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s + 3s)";
+    }
+    console.log("hello");
 })
 
 inverval_timer = setInterval(() => { 
@@ -55,11 +78,14 @@ inverval_timer = setInterval(() => {
     else {
         randDirection = 1;
     }
-    randRotate = randRotate + randDirection*(100 + Math.floor(Math.random() *  90));
-    circles.forEach(circle => {
-        circle.style.scale = randScale;
-        circle.style.rotate = randRotate + 'deg';
-    });
+
+    if (!(stopAnim)) { 
+        randRotate = randRotate + randDirection*(100 + Math.floor(Math.random() *  90));
+        circles.forEach(circle => {
+            circle.style.scale = randScale;
+            circle.style.rotate = randRotate + 'deg';
+        });
+    }
 }, 4900);
 
 scrollGroup.style.translate = '0px ' + scrollDownHeight + "px";
