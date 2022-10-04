@@ -52,7 +52,6 @@ nav {
   align-items: center;
 }
 nav ul {
-  width: 100%;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -108,6 +107,7 @@ nav .scroll-down-icon {
 }
 
 .circles-wrapper {
+  z-index: -1;
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -117,7 +117,6 @@ nav .scroll-down-icon {
 }
 
 .circles-container {
-  z-index: 0;
   width: fit-content;
   display: grid;
   grid-template-columns: 1fr;
@@ -196,6 +195,15 @@ nav .scroll-down-icon {
   grid-column: 3;
   font-size: 1.25rem;
   font-weight: 500;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

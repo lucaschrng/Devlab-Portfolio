@@ -61,7 +61,6 @@ nav {
     align-items: center;
 
     ul {
-        width: 100%;
         list-style: none;
         display: flex;
         flex-direction: column;
@@ -131,6 +130,7 @@ nav {
 }
 
 .circles-wrapper {
+    z-index: -1;
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -140,7 +140,6 @@ nav {
 }
 
 .circles-container {
-    z-index: 0;
     width: fit-content;
     display: grid;
     grid-template-columns: 1fr;
@@ -228,4 +227,9 @@ nav {
             font-weight: $fw-regular;
         }
     }
+}
+
+@keyframes fade {
+    from {opacity: 0}
+    to {opacity: 1}
 }

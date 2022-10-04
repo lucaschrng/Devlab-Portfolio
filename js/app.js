@@ -20,6 +20,7 @@ let navButtonsCircle = document.querySelectorAll('nav ul:nth-child(3) li a');
 let homeButton = document.querySelector('nav ul li a');
 let hoverCircles = document.querySelector('.hover-circles')
 let stopAnim = false;
+timeChange = false;
 
 window.addEventListener('mousemove', (e) => {
     cursor.style.top = e.clientY + "px";
@@ -35,32 +36,51 @@ for (let index = 1; index < circles.length+1; index++) {
     circles[index-1].style.opacity = 1 - (index-1)/15;
 }
 
-hoverCircles.addEventListener('mousemove', (e) => {
-    let y = 0;
-    let x = 0;
-    stopAnim = true;
-    for (let index = 1; index < circles.length+1; index++) {
-        y = (e.clientY - (window.innerHeight/2))/2;
-        x = (e.clientX - (window.innerWidth/2))/2;
-        setTimeout(() => {    
-            circles[index-1].style.translate = x + "px " + y + "px";
-        }, (index - 1)*10);
-        circles[index-1].style.scale = 0.4;
-        circles[index-1].style.transitionDuration = "0s";
-    }
-})
-
-hoverCircles.addEventListener('mouseleave', () => {
-    stopAnim = false;
-    for (let index = 1; index < circles.length+1; index++) {
-        console.log("hello");
+window.addEventListener('mousemove', (e) => {
+    if (e.clientX > hoverCircles.getBoundingClientRect().left && e.clientX < hoverCircles.getBoundingClientRect().right && e.clientY > hoverCircles.getBoundingClientRect().top && e.clientY < hoverCircles.getBoundingClientRect().bottom) {
+        timeChange = true;
         setTimeout(() => {
-            circles[index-1].style.translate = "0px 0px";
-        }, ((index -1)*10+1));
-        circles[index-1].style.scale = 1;
-        circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s + 3s)";
+            if (timeChange) {
+                cursor.style.opacity = 0;
+            }
+        }, 500);
+        cursor.style.animation = ".5s ease 0s 1 reverse fade";
+        let y = 0;
+        let x = 0;
+        stopAnim = true;
+        cursor.style.animation = ".5s ease 0s 1 reverse fade";
+        for (let index = 1; index < circles.length+1; index++) {
+            y = (e.clientY - (window.innerHeight/2))/2;
+            x = (e.clientX - (window.innerWidth/2))/2;
+            setTimeout(() => {    
+                circles[index-1].style.translate = x + "px " + y + "px";
+            }, (index - 1)*20);
+            circles[index-1].style.scale = 0.4;
+            circles[index-1].style.transitionDuration = ".3s";
+            setTimeout(() => {  
+                if(timeChange) {
+                    circles[index-1].style.transitionDuration = "0s";
+                }
+            }, 200);
+        }
     }
-    console.log("hello");
+    else {
+        stopAnim = false;
+        cursor.style.animation = ".1s ease 0s 1 fade";
+        setTimeout(() => {
+            cursor.style.opacity = 1;
+        }, 100);
+        for (let index = 1; index < circles.length+1; index++) {
+            console.log("hello");
+            setTimeout(() => {
+                circles[index-1].style.translate = "0px 0px";
+            }, ((index -1)*20+1));
+            circles[index-1].style.scale = 1;
+            circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s + 3s)";
+            timeChange = false;
+        }
+        console.log("hello");
+    }
 })
 
 inverval_timer = setInterval(() => { 
