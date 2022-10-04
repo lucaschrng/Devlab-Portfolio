@@ -22,7 +22,6 @@ nav {
   width: 100%;
   padding: 25px;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
@@ -30,9 +29,7 @@ nav ul {
   width: 100%;
   list-style: none;
   display: flex;
-}
-nav ul li {
-  width: 33.3333333333%;
+  flex-direction: column;
 }
 nav ul li a {
   position: relative;
@@ -52,31 +49,26 @@ nav ul li a::after {
 nav ul li a:hover::after {
   width: 100%;
 }
-nav ul li:nth-child(2) {
+nav ul:nth-child(2) {
+  align-items: center;
   text-align: center;
+  align-self: flex-end;
+  transition: all 0.7s ease;
 }
-nav ul li:nth-child(3) {
+nav ul:nth-child(3) {
+  align-items: flex-end;
   text-align: right;
 }
-nav ul .scroll-down {
-  transition: all 0.5s ease 0s;
+nav .scroll-down {
+  translate: 0px 50px;
+  transition: all 0.7s ease;
 }
-nav ul .scroll-down span {
-  position: relative;
-}
-nav ul .scroll-down span::after {
-  content: "";
-  height: 50px;
-  width: 100%;
-  position: absolute;
-  background-image: url(/img/down-arrow.svg);
-  background-repeat: no-repeat;
-  background-position: center;
+nav .scroll-down-icon {
   filter: invert(1);
-  bottom: -50px;
-  left: 0;
-  translate: var(--scroll-translate);
-  transition: all 0.5s ease 0s;
+  height: 1.25rem;
+  align-self: flex-end;
+  position: relative;
+  transition: all 0.7s ease;
 }
 
 .circles-container {
@@ -95,43 +87,43 @@ nav ul .scroll-down span::after {
   transition: all 4.8s ease;
 }
 .circles-container img:nth-child(1) {
-  opacity: 0.9090909091;
+  opacity: 0.9333333333;
   transition-delay: calc((1-1) * 0.08s);
 }
 .circles-container img:nth-child(2) {
-  opacity: 0.8181818182;
+  opacity: 0.8666666667;
   transition-delay: calc((2-1) * 0.08s);
 }
 .circles-container img:nth-child(3) {
-  opacity: 0.7272727273;
+  opacity: 0.8;
   transition-delay: calc((3-1) * 0.08s);
 }
 .circles-container img:nth-child(4) {
-  opacity: 0.6363636364;
+  opacity: 0.7333333333;
   transition-delay: calc((4-1) * 0.08s);
 }
 .circles-container img:nth-child(5) {
-  opacity: 0.5454545455;
+  opacity: 0.6666666667;
   transition-delay: calc((5-1) * 0.08s);
 }
 .circles-container img:nth-child(6) {
-  opacity: 0.4545454545;
+  opacity: 0.6;
   transition-delay: calc((6-1) * 0.08s);
 }
 .circles-container img:nth-child(7) {
-  opacity: 0.3636363636;
+  opacity: 0.5333333333;
   transition-delay: calc((7-1) * 0.08s);
 }
 .circles-container img:nth-child(8) {
-  opacity: 0.2727272727;
+  opacity: 0.4666666667;
   transition-delay: calc((8-1) * 0.08s);
 }
 .circles-container img:nth-child(9) {
-  opacity: 0.1818181818;
+  opacity: 0.4;
   transition-delay: calc((9-1) * 0.08s);
 }
 .circles-container img:nth-child(10) {
-  opacity: 0.0909090909;
+  opacity: 0.3333333333;
   transition-delay: calc((10-1) * 0.08s);
 }
 

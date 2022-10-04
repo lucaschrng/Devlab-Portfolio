@@ -1,10 +1,9 @@
 let circles = document.querySelectorAll('.circles-container img');
-let navButtons = document.querySelectorAll('nav ul:nth-child(1) li');
 let homePage = document.querySelector('.circles-container');
+let scrollGroup = document.querySelector('nav ul:nth-child(2)');
 let scrollDown = document.querySelector('.scroll-down');
-let scrollDownIcon = window.getComputedStyle(scrollDown, "::after");;
-console.log(scrollDown.style);
-console.log(scrollDownIcon);
+let scrollDownIcon = document.querySelector('.scroll-down-icon');
+let scrollDownHeight = scrollDown.offsetHeight;
 let randScale = 0;
 let randRotate = 0;
 let randDirection = 1;
@@ -19,11 +18,6 @@ setTimeout(() => {
         circle.style.transitionDuration = "4s";
     });
 }, 4800);
-
-// navButtons.forEach(button => {
-//     button.style.translate = '0px 0px';
-// });
-
 
 inverval_timer = setInterval(() => { 
     randScale = 0.7 + (Math.floor(Math.random() * 30))/100;
@@ -41,11 +35,21 @@ inverval_timer = setInterval(() => {
     });
 }, 4900);
 
+scrollGroup.style.translate = '0px ' + scrollDownHeight + "px";
+
 interval_timer2 = setInterval(() => {
-    scrollDown.style.translate = '0px ' + -1.5 + 'em';
-    document.documentElement.style.setProperty('--scroll-translate', "0px 0px");
+    scrollGroup.style.translate = '0px 0px';
+    scrollDown.style.translate = '0px 0px';
+    scrollDownIcon.style.rotate = '180deg';
     setTimeout(() => {
-        scrollDown.style.translate = '0px 0px';
-        document.documentElement.style.setProperty('--scroll-translate', "0px 50px");
+        scrollGroup.style.translate = '0px ' + scrollDownHeight + "px";
+        scrollDown.style.translate = '0px 50px';
+        scrollDownIcon.style.rotate = '0deg';
     }, 4000);
-}, 12000);
+    // scrollDown.style.translate = '0px ' + -10 + 'px';
+    // document.documentElement.style.setProperty('--scroll-translate', "0px 0px");
+    // setTimeout(() => {
+    //     scrollDown.style.translate = '0px 0px';
+    //     document.documentElement.style.setProperty('--scroll-translate', "0px 50px");
+    // }, 4000);
+}, 10000);
