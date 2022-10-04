@@ -8,13 +8,16 @@ let scrollAnim = true;
 let scrollDownHeight = scrollDown.offsetHeight;
 let intro = document.querySelector('.intro')
 let introY = intro.getBoundingClientRect().top;
-console.log(introY);
+let studies = document.querySelector('.studies');
+let studiesY = studies.getBoundingClientRect().top;
 let randScale = 0;
 let scaleFixed = false;
 let randRotate = 0;
 let randDirection = 1;
-let windowY = window.innerHeight;
-let y = window.scrollY;
+let pages = document.querySelectorAll('.page0 ~ div');
+let navButtons = document.querySelectorAll('nav ul:nth-child(3) li');
+
+console.log(pages);
 
 circles.forEach(circle => {
     circle.style.scale = '1';
@@ -64,8 +67,8 @@ interval_timer2 = setInterval(() => {
 }, 10000);
 
 document.addEventListener('scroll', () => {
-    intro = document.querySelector('.intro')
     introY = intro.getBoundingClientRect().top;
+    studiesY = studies.getBoundingClientRect().top;
     if (introY < 400) {
         circleContainer.style.opacity = 0.4;
         scaleFixed = true;
@@ -76,4 +79,21 @@ document.addEventListener('scroll', () => {
         scaleFixed = false;
         scrollAnim = true;
     }
+
+    if (studiesY < 400) {
+        circleContainer.style.opacity = 0;
+    }
 })
+
+for (let i = 0; i < navButtons.length; i++) {
+    navButtons[i].addEventListener('click', () => {
+        window.scrollTo({
+            top: pages[i+1].getBoundingClientRect().top + window.pageYOffset,
+            left: 0,
+            behavior: 'smooth'
+          });
+    })
+    
+}
+
+console.log(pages);

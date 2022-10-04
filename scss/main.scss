@@ -2,8 +2,9 @@ $clr-black: #000;
 $clr-white: #fff;
 $bg-color: $clr-black;
 $font-color: $clr-white;
-$fs-small: 1.5rem;
+$fs-small: 1.25rem;
 $fw-regular: 500;
+$fw-medium: 600;
 
 :root {
     --scroll-translate: 0px 50px;
@@ -161,5 +162,42 @@ nav {
     &__content {
         width: 25ch;
         text-align: center;
+    }
+}
+
+.grid-page {
+    scroll-snap-align: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr 1fr;
+
+        h2 {
+            grid-column: 2;
+            font-size: $fs-small;
+            font-weight: $fw-medium;
+        }
+
+        h3 {
+            text-decoration: underline;
+            + p {
+                margin-top: 1rem;
+            }
+        }
+
+        p + h3 {
+            margin-top: 1rem;
+        }
+
+        h3, p {
+            grid-column: 3;
+            font-size: $fs-small;
+            font-weight: $fw-regular;
+        }
     }
 }
