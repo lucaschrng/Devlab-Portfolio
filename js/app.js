@@ -46,10 +46,9 @@ window.addEventListener('mousemove', (e) => {
             timeChange = true;
             setTimeout(() => {
                 if (timeChange) {
-                    cursor.style.opacity = 0;
+                    cursor.style.scale = 0.4;
                 }
-            }, 500);
-            cursor.style.animation = ".5s ease 0s 1 reverse fade";
+            }, 100);
             let y = 0;
             let x = 0;
             stopAnim = true;
@@ -70,9 +69,9 @@ window.addEventListener('mousemove', (e) => {
         }
         else if(timeChange = true) {
             stopAnim = false;
-            cursor.style.animation = ".2s ease 0s 1 normal fade";
+            cursor.style.animation = ".2s ease 0s 1 normal scale";
             setTimeout(() => {
-                cursor.style.opacity = 1;
+                cursor.style.scale = 1;
             }, 200);
             for (let index = 1; index < circles.length+1; index++) {
                 setTimeout(() => {
@@ -87,9 +86,9 @@ window.addEventListener('mousemove', (e) => {
     
     else if(timeChange = true) {
         stopAnim = false;
-        cursor.style.animation = ".2s ease 0s 1 normal fade";
+        cursor.style.animation = ".2s ease 0s 1 normal scale";
         setTimeout(() => {
-            cursor.style.opacity = 1;
+            cursor.style.scale = 1;
         }, 200);
         for (let index = 1; index < circles.length+1; index++) {
             setTimeout(() => {
@@ -129,18 +128,18 @@ window.addEventListener('mousemove', (e) => {
 
 // scrollGroup.style.translate = '0px ' + scrollDownHeight + "px";
 
-// interval_timer2 = setInterval(() => {
-//     if (scrollAnim) { 
-//         scrollGroup.style.translate = '0px 0px';
-//         scrollDown.style.translate = '0px 0px';
-//         scrollDownIcon.style.rotate = '180deg';
-//         setTimeout(() => {
-//             scrollGroup.style.translate = '0px ' + scrollDownHeight + "px";
-//             scrollDown.style.translate = '0px 50px';
-//             scrollDownIcon.style.rotate = '0deg';
-//         }, 4000);
-//     }
-// }, 10000);
+interval_timer2 = setInterval(() => {
+    if (scrollAnim) { 
+        scrollGroup.style.translate = '0px 0px';
+        scrollDown.style.translate = '0px 0px';
+        scrollDownIcon.style.rotate = '180deg';
+        setTimeout(() => {
+            scrollGroup.style.translate = '0px ' + scrollDownHeight + "px";
+            scrollDown.style.translate = '0px 50px';
+            scrollDownIcon.style.rotate = '0deg';
+        }, 4000);
+    }
+}, 10000);
 
 document.addEventListener('scroll', () => {
     introY = pages[0].getBoundingClientRect().top;
@@ -189,7 +188,7 @@ document.addEventListener('scroll', () => {
         stopAnim = false;
         cursor.style.animation = ".2s ease 0s 1 fade";
         setTimeout(() => {
-            cursor.style.opacity = 1;
+            cursor.style.scale = 1;
         }, 200);
         for (let index = 1; index < circles.length+1; index++) {
             setTimeout(() => {
