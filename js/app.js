@@ -29,12 +29,15 @@ window.addEventListener('mousemove', (e) => {
 })
 
 circles.forEach(circle => {
-    circle.style.scale = '1';
-    circle.style.rotate = '0deg';
+    // circle.style.scale = '1';
+    // circle.style.rotate = '0deg';
 });
 
 for (let index = 1; index < circles.length+1; index++) {
     circles[index-1].style.opacity = 1 - (index-1)/15;
+    setTimeout(() => {
+        circles[index-1].style.animation = 'circleMotion 3s linear 0s infinite normal';
+    }, (index - 1)*300);
 }
 
 window.addEventListener('mousemove', (e) => {
@@ -56,7 +59,7 @@ window.addEventListener('mousemove', (e) => {
                 setTimeout(() => {    
                     circles[index-1].style.translate = x + "px " + y + "px";
                 }, (index - 1)*20);
-                circles[index-1].style.scale = 0.4;
+                circles[index-1].style.scale = 0.7;
                 circles[index-1].style.transitionDuration = ".3s";
                 setTimeout(() => {  
                     if(timeChange) {
@@ -67,12 +70,11 @@ window.addEventListener('mousemove', (e) => {
         }
         else if(timeChange = true) {
             stopAnim = false;
-            cursor.style.animation = ".2s ease 0s 1 fade";
+            cursor.style.animation = ".2s ease 0s 1 normal fade";
             setTimeout(() => {
                 cursor.style.opacity = 1;
             }, 200);
             for (let index = 1; index < circles.length+1; index++) {
-                console.log("hello");
                 setTimeout(() => {
                     circles[index-1].style.translate = "0px 0px";
                 }, ((index -1)*20+1));
@@ -80,18 +82,16 @@ window.addEventListener('mousemove', (e) => {
                 circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s + 3s)";
                 timeChange = false;
             }
-            console.log("hello");
         }
     }
     
     else if(timeChange = true) {
         stopAnim = false;
-        cursor.style.animation = ".2s ease 0s 1 fade";
+        cursor.style.animation = ".2s ease 0s 1 normal fade";
         setTimeout(() => {
             cursor.style.opacity = 1;
         }, 200);
         for (let index = 1; index < circles.length+1; index++) {
-            console.log("hello");
             setTimeout(() => {
                 circles[index-1].style.translate = "0px 0px";
             }, ((index -1)*20+1));
@@ -99,49 +99,48 @@ window.addEventListener('mousemove', (e) => {
             circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s + 3s)";
             timeChange = false;
         }
-        console.log("hello");
     }
 })
 
-inverval_timer = setInterval(() => { 
-    if (scaleFixed) {
-        randScale = 1;
-    }
-    else {
-        randScale = 0.7 + (Math.floor(Math.random() * 30))/100;
-    }
+// inverval_timer = setInterval(() => { 
+//     if (scaleFixed) {
+//         randScale = 1;
+//     }
+//     else {
+//         randScale = 0.7 + (Math.floor(Math.random() * 30))/100;
+//     }
 
-    randDirection = Math.floor(Math.random() * 2);
-    if(randDirection == 0) {
-        randDirection = -1;
-    }
-    else {
-        randDirection = 1;
-    }
+//     randDirection = Math.floor(Math.random() * 2);
+//     if(randDirection == 0) {
+//         randDirection = -1;
+//     }
+//     else {
+//         randDirection = 1;
+//     }
 
-    if (!(stopAnim)) { 
-        randRotate = randRotate + randDirection*(100 + Math.floor(Math.random() *  90));
-        circles.forEach(circle => {
-            circle.style.scale = randScale;
-            circle.style.rotate = randRotate + 'deg';
-        });
-    }
-}, 4900);
+//     if (!(stopAnim)) { 
+//         randRotate = randRotate + randDirection*(100 + Math.floor(Math.random() *  90));
+//         circles.forEach(circle => {
+//             circle.style.scale = randScale;
+//             circle.style.rotate = randRotate + 'deg';
+//         });
+//     }
+// }, 4900);
 
-scrollGroup.style.translate = '0px ' + scrollDownHeight + "px";
+// scrollGroup.style.translate = '0px ' + scrollDownHeight + "px";
 
-interval_timer2 = setInterval(() => {
-    if (scrollAnim) { 
-        scrollGroup.style.translate = '0px 0px';
-        scrollDown.style.translate = '0px 0px';
-        scrollDownIcon.style.rotate = '180deg';
-        setTimeout(() => {
-            scrollGroup.style.translate = '0px ' + scrollDownHeight + "px";
-            scrollDown.style.translate = '0px 50px';
-            scrollDownIcon.style.rotate = '0deg';
-        }, 4000);
-    }
-}, 10000);
+// interval_timer2 = setInterval(() => {
+//     if (scrollAnim) { 
+//         scrollGroup.style.translate = '0px 0px';
+//         scrollDown.style.translate = '0px 0px';
+//         scrollDownIcon.style.rotate = '180deg';
+//         setTimeout(() => {
+//             scrollGroup.style.translate = '0px ' + scrollDownHeight + "px";
+//             scrollDown.style.translate = '0px 50px';
+//             scrollDownIcon.style.rotate = '0deg';
+//         }, 4000);
+//     }
+// }, 10000);
 
 document.addEventListener('scroll', () => {
     introY = pages[0].getBoundingClientRect().top;
@@ -149,12 +148,19 @@ document.addEventListener('scroll', () => {
     skillsY = pages[2].getBoundingClientRect().top;
     if (introY < 400) {
         circleContainer.style.opacity = 0.4;
+        circles.forEach(circle => {
+            circle.style.scale = "0.9";
+            console.log(circle);
+        });
         scaleFixed = true;
         scrollAnim = false;
         canPlay = false;
     }
     else {
         circleContainer.style.opacity = 1;
+        circles.forEach(circle => {
+            circle.style.scale = "1";
+        })
         scaleFixed = false;
         scrollAnim = true;
         canPlay = true;
@@ -186,7 +192,6 @@ document.addEventListener('scroll', () => {
             cursor.style.opacity = 1;
         }, 200);
         for (let index = 1; index < circles.length+1; index++) {
-            console.log("hello");
             setTimeout(() => {
                 circles[index-1].style.translate = "0px 0px";
             }, ((index -1)*20+1));
@@ -194,7 +199,6 @@ document.addEventListener('scroll', () => {
             circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s + 3s)";
             timeChange = false;
         }
-        console.log("hello");
     }
 })
 

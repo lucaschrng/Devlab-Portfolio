@@ -1,6 +1,7 @@
 :root {
   --scroll-translate: 0px 50px;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -18,7 +19,6 @@ body {
   font-weight: 500;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  scroll-behavior: smooth;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -203,6 +203,14 @@ nav .scroll-down-icon {
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes circleMotion {
+  from {
+    transform: rotate(0deg) translateX(5px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(5px) rotate(-360deg);
   }
 }
 
