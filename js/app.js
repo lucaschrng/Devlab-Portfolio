@@ -20,7 +20,8 @@ let navButtonsCircle = document.querySelectorAll('nav ul:nth-child(3) li a');
 let homeButton = document.querySelector('nav ul li a');
 let hoverCircles = document.querySelector('.hover-circles')
 let stopAnim = false;
-timeChange = false;
+let timeChange = false;
+let canPlay = true;
 
 window.addEventListener('mousemove', (e) => {
     cursor.style.top = e.clientY + "px";
@@ -37,39 +38,58 @@ for (let index = 1; index < circles.length+1; index++) {
 }
 
 window.addEventListener('mousemove', (e) => {
-    if (e.clientX > hoverCircles.getBoundingClientRect().left && e.clientX < hoverCircles.getBoundingClientRect().right && e.clientY > hoverCircles.getBoundingClientRect().top && e.clientY < hoverCircles.getBoundingClientRect().bottom) {
-        timeChange = true;
-        setTimeout(() => {
-            if (timeChange) {
-                cursor.style.opacity = 0;
-            }
-        }, 500);
-        cursor.style.animation = ".5s ease 0s 1 reverse fade";
-        let y = 0;
-        let x = 0;
-        stopAnim = true;
-        cursor.style.animation = ".5s ease 0s 1 reverse fade";
-        for (let index = 1; index < circles.length+1; index++) {
-            y = (e.clientY - (window.innerHeight/2))/2;
-            x = (e.clientX - (window.innerWidth/2))/2;
-            setTimeout(() => {    
-                circles[index-1].style.translate = x + "px " + y + "px";
-            }, (index - 1)*20);
-            circles[index-1].style.scale = 0.4;
-            circles[index-1].style.transitionDuration = ".3s";
-            setTimeout(() => {  
-                if(timeChange) {
-                    circles[index-1].style.transitionDuration = "0s";
+    if (canPlay) {
+        if (e.clientX > hoverCircles.getBoundingClientRect().left && e.clientX < hoverCircles.getBoundingClientRect().right && e.clientY > hoverCircles.getBoundingClientRect().top && e.clientY < hoverCircles.getBoundingClientRect().bottom) {
+            timeChange = true;
+            setTimeout(() => {
+                if (timeChange) {
+                    cursor.style.opacity = 0;
                 }
+            }, 500);
+            cursor.style.animation = ".5s ease 0s 1 reverse fade";
+            let y = 0;
+            let x = 0;
+            stopAnim = true;
+            for (let index = 1; index < circles.length+1; index++) {
+                y = (e.clientY - (window.innerHeight/2))/2;
+                x = (e.clientX - (window.innerWidth/2))/2;
+                setTimeout(() => {    
+                    circles[index-1].style.translate = x + "px " + y + "px";
+                }, (index - 1)*20);
+                circles[index-1].style.scale = 0.4;
+                circles[index-1].style.transitionDuration = ".3s";
+                setTimeout(() => {  
+                    if(timeChange) {
+                        circles[index-1].style.transitionDuration = "0s";
+                    }
+                }, 200);
+            }
+        }
+        else if(timeChange = true) {
+            stopAnim = false;
+            cursor.style.animation = ".2s ease 0s 1 fade";
+            setTimeout(() => {
+                cursor.style.opacity = 1;
             }, 200);
+            for (let index = 1; index < circles.length+1; index++) {
+                console.log("hello");
+                setTimeout(() => {
+                    circles[index-1].style.translate = "0px 0px";
+                }, ((index -1)*20+1));
+                circles[index-1].style.scale = 1;
+                circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s + 3s)";
+                timeChange = false;
+            }
+            console.log("hello");
         }
     }
-    else {
+    
+    else if(timeChange = true) {
         stopAnim = false;
-        cursor.style.animation = ".1s ease 0s 1 fade";
+        cursor.style.animation = ".2s ease 0s 1 fade";
         setTimeout(() => {
             cursor.style.opacity = 1;
-        }, 100);
+        }, 200);
         for (let index = 1; index < circles.length+1; index++) {
             console.log("hello");
             setTimeout(() => {
@@ -131,11 +151,13 @@ document.addEventListener('scroll', () => {
         circleContainer.style.opacity = 0.4;
         scaleFixed = true;
         scrollAnim = false;
+        canPlay = false;
     }
     else {
         circleContainer.style.opacity = 1;
         scaleFixed = false;
         scrollAnim = true;
+        canPlay = true;
     }
 
     if (studiesY < 400) {
@@ -155,6 +177,24 @@ document.addEventListener('scroll', () => {
 
     else {
         navButtonsCircle[1].classList.remove("active");
+    }
+
+    if(timeChange = true) {
+        stopAnim = false;
+        cursor.style.animation = ".2s ease 0s 1 fade";
+        setTimeout(() => {
+            cursor.style.opacity = 1;
+        }, 200);
+        for (let index = 1; index < circles.length+1; index++) {
+            console.log("hello");
+            setTimeout(() => {
+                circles[index-1].style.translate = "0px 0px";
+            }, ((index -1)*20+1));
+            circles[index-1].style.scale = 1;
+            circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s + 3s)";
+            timeChange = false;
+        }
+        console.log("hello");
     }
 })
 
