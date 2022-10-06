@@ -1,6 +1,5 @@
 :root {
   --scroll-translate: 0px 50px;
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
@@ -155,7 +154,7 @@ nav .scroll-down-icon {
 .intro {
   scroll-snap-align: center;
   width: 100%;
-  height: 100vh;
+  margin-bottom: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,8 +167,8 @@ nav .scroll-down-icon {
 
 .grid-page {
   scroll-snap-align: center;
-  height: 100vh;
   width: 100%;
+  margin-bottom: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;

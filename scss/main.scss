@@ -10,7 +10,6 @@ $fw-medium: 600;
 
 :root {
     --scroll-translate: 0px 50px;
-    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
 
@@ -183,7 +182,7 @@ nav {
 .intro {
     scroll-snap-align: center;
     width: 100%;
-    height: 100vh;
+    margin-bottom: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,8 +196,8 @@ nav {
 
 .grid-page {
     scroll-snap-align: center;
-    height: 100vh;
     width: 100%;
+    margin-bottom: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;

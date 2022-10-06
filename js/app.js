@@ -145,7 +145,7 @@ document.addEventListener('scroll', () => {
     introY = pages[0].getBoundingClientRect().top;
     studiesY = pages[1].getBoundingClientRect().top;
     skillsY = pages[2].getBoundingClientRect().top;
-    if (introY < 400) {
+    if (introY < window.innerHeight*0.9) {
         circleContainer.style.opacity = 0.4;
         circles.forEach(circle => {
             circle.style.scale = "0.9";
@@ -165,7 +165,7 @@ document.addEventListener('scroll', () => {
         canPlay = true;
     }
 
-    if (studiesY < 400) {
+    if (studiesY < window.innerHeight*0.9) {
         circleContainer.style.opacity = 0;
         navButtonsCircle[0].classList.add("active");
     }
@@ -174,7 +174,7 @@ document.addEventListener('scroll', () => {
         navButtonsCircle[0].classList.remove("active");
     }
 
-    if (skillsY < 400) {
+    if (skillsY < window.innerHeight*0.9) {
         circleContainer.style.opacity = 0;
         navButtonsCircle[1].classList.add("active");
         navButtonsCircle[0].classList.remove("active");
@@ -212,7 +212,7 @@ homeButton.addEventListener('click', () => {
 for (let i = 0; i < navButtons.length; i++) {
     navButtons[i].addEventListener('click', () => {
         window.scrollTo({
-            top: pages[i+1].getBoundingClientRect().top + window.pageYOffset,
+            top: pages[i+1].getBoundingClientRect().top + window.pageYOffset - (window.innerHeight/2) + (pages[i+1].offsetHeight/2),
             left: 0,
             behavior: 'smooth'
           });
