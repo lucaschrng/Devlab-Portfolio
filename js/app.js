@@ -45,7 +45,7 @@ for (let index = 1; index < circles.length+1; index++) {
         circles[index-1].style.translate = "0px 0px";
     }, ((index -1)*20+1));
     circles[index-1].style.scale = 1;
-    circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s + 3s)";
+    circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s)";
     timeChange = false;
 }
 
@@ -60,6 +60,7 @@ window.addEventListener('mousemove', (e) => {
             }, 100);
             let y = 0;
             let x = 0;
+            hoverCircles.style.opacity = 0.2;
             stopAnim = true;
             for (let index = 1; index < circles.length+1; index++) {
                 y = (e.clientY - (window.innerHeight/2))/2;
@@ -82,12 +83,13 @@ window.addEventListener('mousemove', (e) => {
             setTimeout(() => {
                 cursor.style.scale = 1;
             }, 200);
+            hoverCircles.style.opacity = 0;
             for (let index = 1; index < circles.length+1; index++) {
                 setTimeout(() => {
                     circles[index-1].style.translate = "0px 0px";
                 }, ((index -1)*20+1));
                 circles[index-1].style.scale = 1;
-                circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s + 3s)";
+                circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s)";
                 timeChange = false;
             }
         }
@@ -99,12 +101,13 @@ window.addEventListener('mousemove', (e) => {
         setTimeout(() => {
             cursor.style.scale = 1;
         }, 200);
+        hoverCircles.style.opacity = 0;
         for (let index = 1; index < circles.length+1; index++) {
             setTimeout(() => {
                 circles[index-1].style.translate = "0px 0px";
             }, ((index -1)*20+1));
             circles[index-1].style.scale = 1;
-            circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s + 3s)";
+            circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s)";
             timeChange = false;
         }
     }
@@ -204,7 +207,7 @@ document.addEventListener('scroll', () => {
                 circles[index-1].style.translate = "0px 0px";
             }, ((index -1)*20+1));
             circles[index-1].style.scale = 1;
-            circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s + 3s)";
+            circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s)";
             timeChange = false;
         }
     }

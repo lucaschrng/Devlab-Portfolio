@@ -131,7 +131,7 @@ nav .scroll-down-icon {
   height: 90vh;
   grid-column: 1;
   grid-row: 1;
-  scale: 0.5;
+  scale: 0.7;
   rotate: -35deg;
   transition: all 4.8s ease;
 }
@@ -170,6 +170,10 @@ nav .scroll-down-icon {
   width: 50%;
   grid-column: 1;
   grid-row: 1;
+  border: #fff 3px dotted;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.5s ease;
 }
 
 .page0 {
