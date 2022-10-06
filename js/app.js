@@ -159,6 +159,7 @@ document.addEventListener('scroll', () => {
     skillsY = pages[2].getBoundingClientRect().top;
     if (introY < window.innerHeight*0.9) {
         circleContainer.style.opacity = 0.4;
+        hoverCircles.style.opacity = 0;
         circles.forEach(circle => {
             circle.style.scale = "0.9";
             console.log(circle);
