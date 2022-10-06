@@ -135,6 +135,36 @@ nav .scroll-down-icon {
   rotate: -35deg;
   transition: all 4.8s ease;
 }
+.circles-container img:nth-child(1) {
+  animation: circleMotion 3s linear calc((1-1) * 300ms) infinite normal;
+}
+.circles-container img:nth-child(2) {
+  animation: circleMotion 3s linear calc((2-1) * 300ms) infinite normal;
+}
+.circles-container img:nth-child(3) {
+  animation: circleMotion 3s linear calc((3-1) * 300ms) infinite normal;
+}
+.circles-container img:nth-child(4) {
+  animation: circleMotion 3s linear calc((4-1) * 300ms) infinite normal;
+}
+.circles-container img:nth-child(5) {
+  animation: circleMotion 3s linear calc((5-1) * 300ms) infinite normal;
+}
+.circles-container img:nth-child(6) {
+  animation: circleMotion 3s linear calc((6-1) * 300ms) infinite normal;
+}
+.circles-container img:nth-child(7) {
+  animation: circleMotion 3s linear calc((7-1) * 300ms) infinite normal;
+}
+.circles-container img:nth-child(8) {
+  animation: circleMotion 3s linear calc((8-1) * 300ms) infinite normal;
+}
+.circles-container img:nth-child(9) {
+  animation: circleMotion 3s linear calc((9-1) * 300ms) infinite normal;
+}
+.circles-container img:nth-child(10) {
+  animation: circleMotion 3s linear calc((10-1) * 300ms) infinite normal;
+}
 .circles-container .hover-circles {
   height: 50%;
   width: 50%;
@@ -154,7 +184,7 @@ nav .scroll-down-icon {
 .intro {
   scroll-snap-align: center;
   width: 100%;
-  margin-bottom: 50vh;
+  margin-bottom: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,7 +198,7 @@ nav .scroll-down-icon {
 .grid-page {
   scroll-snap-align: center;
   width: 100%;
-  margin-bottom: 50vh;
+  margin-bottom: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;

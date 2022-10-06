@@ -35,9 +35,18 @@ circles.forEach(circle => {
 
 for (let index = 1; index < circles.length+1; index++) {
     circles[index-1].style.opacity = 1 - (index-1)/15;
+    // setTimeout(() => {
+    //     circles[index-1].style.animation = 'circleMotion 3s linear 0s infinite normal';
+    // }, (index - 1)*300);
+}
+
+for (let index = 1; index < circles.length+1; index++) {
     setTimeout(() => {
-        circles[index-1].style.animation = 'circleMotion 3s linear 0s infinite normal';
-    }, (index - 1)*300);
+        circles[index-1].style.translate = "0px 0px";
+    }, ((index -1)*20+1));
+    circles[index-1].style.scale = 1;
+    circles[index-1].style.transitionDuration = "calc(" + index + "*0.2s + 3s)";
+    timeChange = false;
 }
 
 window.addEventListener('mousemove', (e) => {

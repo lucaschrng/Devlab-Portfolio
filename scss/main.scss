@@ -159,6 +159,11 @@ nav {
         scale: 0.5;
         rotate: -35deg;
         transition: all 4.8s ease;
+        @for $var from 1 to 11 {
+            &:nth-child(#{$var}) {
+                animation: circleMotion 3s linear calc((#{$var}-1)*300ms) infinite normal;
+            }
+        }
     }
 
     .hover-circles {
@@ -182,7 +187,7 @@ nav {
 .intro {
     scroll-snap-align: center;
     width: 100%;
-    margin-bottom: 50vh;
+    margin-bottom: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,7 +202,7 @@ nav {
 .grid-page {
     scroll-snap-align: center;
     width: 100%;
-    margin-bottom: 50vh;
+    margin-bottom: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
