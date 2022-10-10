@@ -2,7 +2,7 @@ let cursor = document.querySelector('.cursor');
 let circleContainer = document.querySelector('.circles-container');
 let circles = document.querySelectorAll('.circles-container img');
 let homePage = document.querySelector('.circles-container');
-let scrollGroup = document.querySelector('nav ul:nth-child(2)');
+let scrollGroup = document.querySelector('.scroll-down-container');
 let scrollDown = document.querySelector('.scroll-down');
 let scrollDownIcon = document.querySelector('.scroll-down-icon');
 let scrollAnim = true;
@@ -15,8 +15,8 @@ let pages = document.querySelectorAll('.page0 ~ div');
 let introY = pages[0].getBoundingClientRect().top;
 let studiesY = pages[1].getBoundingClientRect().top;
 let skillsY = pages[2].getBoundingClientRect().top;
-let navButtons = document.querySelectorAll('nav ul:nth-child(3) li');
-let navButtonsCircle = document.querySelectorAll('nav ul:nth-child(3) li a');
+let navButtons = document.querySelectorAll('nav ul:nth-child(2) li');
+let navButtonsCircle = document.querySelectorAll('nav ul:nth-child(2) li a');
 let homeButton = document.querySelector('nav ul li a');
 let hoverCircles = document.querySelector('.hover-circles')
 let stopAnim = false;
@@ -34,7 +34,7 @@ circles.forEach(circle => {
 });
 
 for (let index = 1; index < circles.length+1; index++) {
-    circles[index-1].style.opacity = 1 - (index-1)/15;
+    circles[index-1].style.opacity = 1 - (index-1)/10;
     // setTimeout(() => {
     //     circles[index-1].style.animation = 'circleMotion 3s linear 0s infinite normal';
     // }, (index - 1)*300);
@@ -138,7 +138,7 @@ window.addEventListener('mousemove', (e) => {
 //     }
 // }, 4900);
 
-// scrollGroup.style.translate = '0px ' + scrollDownHeight + "px";
+scrollGroup.style.translate = '0px ' + scrollDownHeight + "px";
 
 interval_timer2 = setInterval(() => {
     if (scrollAnim) { 

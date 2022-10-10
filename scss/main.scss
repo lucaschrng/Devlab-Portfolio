@@ -106,17 +106,22 @@ nav {
         }
 
         &:nth-child(2) {
-            align-items: center;
-            text-align: center;
-            align-self: flex-end;
-            transition: all .7s ease;
-        }
-
-        &:nth-child(3) {
             align-items: flex-end;
             text-align: right;
         }
     }
+}
+
+.scroll-down-container {
+    display: flex;
+    padding: 25px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: all .4s ease 0s;
 
     .scroll-down {
         translate: 0px 50px;
@@ -126,7 +131,6 @@ nav {
     .scroll-down-icon {
         filter: invert(1);
         height: 1.25rem;
-        align-self: flex-end;
         position: relative;
         transition: all .7s ease;
     }

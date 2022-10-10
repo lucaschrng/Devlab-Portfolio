@@ -86,23 +86,28 @@ nav ul:nth-child(1) li a:hover::after {
   width: 100%;
 }
 nav ul:nth-child(2) {
-  align-items: center;
-  text-align: center;
-  align-self: flex-end;
-  transition: all 0.7s ease;
-}
-nav ul:nth-child(3) {
   align-items: flex-end;
   text-align: right;
 }
-nav .scroll-down {
+
+.scroll-down-container {
+  display: flex;
+  padding: 25px 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.4s ease 0s;
+}
+.scroll-down-container .scroll-down {
   translate: 0px 50px;
   transition: all 0.7s ease;
 }
-nav .scroll-down-icon {
+.scroll-down-container .scroll-down-icon {
   filter: invert(1);
   height: 1.25rem;
-  align-self: flex-end;
   position: relative;
   transition: all 0.7s ease;
 }
