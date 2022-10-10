@@ -55,12 +55,11 @@ main {
 nav {
     z-index: 50;
     position: fixed;
-    height: 100%;
     width: 100%;
     padding: 25px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
     ul {
         width: 30%;
@@ -76,16 +75,6 @@ nav {
             position: relative;
             color: $font-color;
             text-decoration: none;
-
-            span {
-                opacity: 0;
-                transition: all .2s ease;
-            }
-
-            &:hover span,
-            &.active span {
-                opacity: 1;
-            }
         }
 
         &:nth-child(1) li a {
@@ -106,8 +95,20 @@ nav {
         }
 
         &:nth-child(2) {
+            flex-direction: row;
+            gap: 1em;
+            justify-content: right;
             align-items: flex-end;
             text-align: right;
+
+            li a {
+                opacity: 0.2;
+                transition: all .2s ease;
+
+                &.active {
+                    opacity: 1;
+                }
+            }
         }
     }
 }

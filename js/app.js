@@ -16,28 +16,72 @@ let introY = pages[0].getBoundingClientRect().top;
 let studiesY = pages[1].getBoundingClientRect().top;
 let skillsY = pages[2].getBoundingClientRect().top;
 let navButtons = document.querySelectorAll('nav ul:nth-child(2) li');
-let navButtonsCircle = document.querySelectorAll('nav ul:nth-child(2) li a');
+let navButtonsBtn = document.querySelectorAll('nav ul:nth-child(2) li a');
 let homeButton = document.querySelector('nav ul li a');
-let hoverCircles = document.querySelector('.hover-circles')
+let hoverCircles = document.querySelector('.hover-circles');
 let stopAnim = false;
 let timeChange = false;
 let canPlay = true;
+let click = false;
+let lastActive;
+let useLastActive = true;
 
 window.addEventListener('mousemove', (e) => {
     cursor.style.top = e.clientY + "px";
     cursor.style.left = e.clientX + "px";
 })
 
-circles.forEach(circle => {
-    // circle.style.scale = '1';
-    // circle.style.rotate = '0deg';
+navButtonsBtn.forEach(button => {
+    button.addEventListener('mouseenter', () => {
+        click = false;
+        navButtonsBtn.forEach(button2 => {
+            if (button2.classList.contains('active')) {
+                lastActive = button2;
+            }
+            if (button == button2) {
+                button2.classList.add('active');
+            }
+            else {
+                button2.classList.remove('active');
+            }
+        });
+    })
 });
+
+navButtonsBtn.forEach(button => {
+    button.addEventListener('click', () => {
+        click = true;
+        // navButtonsBtn.forEach(button2 => {
+        //     if (button2.classList.contains('active')) {
+        //         lastActive = button2;
+        //     }
+        //     if (button == button2) {
+        //         button2.classList.add('active');
+        //     }
+        //     else {
+        //         button2.classList.remove('active');
+        //     }
+        // });
+    })
+})
+
+navButtonsBtn.forEach(button => {
+    button.addEventListener('mouseleave', () => {
+        if(!click) {
+            navButtonsBtn.forEach(button2 => {
+                if (button2 == lastActive && useLastActive) {
+                    button2.classList.add('active');
+                }
+                else {
+                    button2.classList.remove('active');
+                }
+            });
+        }
+    })
+})
 
 for (let index = 1; index < circles.length+1; index++) {
     circles[index-1].style.opacity = 1 - (index-1)/10;
-    // setTimeout(() => {
-    //     circles[index-1].style.animation = 'circleMotion 3s linear 0s infinite normal';
-    // }, (index - 1)*300);
 }
 
 for (let index = 1; index < circles.length+1; index++) {
@@ -113,31 +157,6 @@ window.addEventListener('mousemove', (e) => {
     }
 })
 
-// inverval_timer = setInterval(() => { 
-//     if (scaleFixed) {
-//         randScale = 1;
-//     }
-//     else {
-//         randScale = 0.7 + (Math.floor(Math.random() * 30))/100;
-//     }
-
-//     randDirection = Math.floor(Math.random() * 2);
-//     if(randDirection == 0) {
-//         randDirection = -1;
-//     }
-//     else {
-//         randDirection = 1;
-//     }
-
-//     if (!(stopAnim)) { 
-//         randRotate = randRotate + randDirection*(100 + Math.floor(Math.random() *  90));
-//         circles.forEach(circle => {
-//             circle.style.scale = randScale;
-//             circle.style.rotate = randRotate + 'deg';
-//         });
-//     }
-// }, 4900);
-
 scrollGroup.style.translate = '0px ' + scrollDownHeight + "px";
 
 interval_timer2 = setInterval(() => {
@@ -164,7 +183,7 @@ document.addEventListener('scroll', () => {
             circle.style.scale = "0.9";
             console.log(circle);
         });
-        scaleFixed = true;
+        useLastActive = false;
         scrollAnim = false;
         canPlay = false;
     }
@@ -180,21 +199,22 @@ document.addEventListener('scroll', () => {
 
     if (studiesY < window.innerHeight*0.9) {
         circleContainer.style.opacity = 0;
-        navButtonsCircle[0].classList.add("active");
+        useLastActive = true;
+        navButtonsBtn[0].classList.add("active");
     }
 
     else {
-        navButtonsCircle[0].classList.remove("active");
+        navButtonsBtn[0].classList.remove("active");
     }
 
     if (skillsY < window.innerHeight*0.9) {
         circleContainer.style.opacity = 0;
-        navButtonsCircle[1].classList.add("active");
-        navButtonsCircle[0].classList.remove("active");
+        navButtonsBtn[1].classList.add("active");
+        navButtonsBtn[0].classList.remove("active");
     }
 
     else {
-        navButtonsCircle[1].classList.remove("active");
+        navButtonsBtn[1].classList.remove("active");
     }
 
     if(timeChange = true) {

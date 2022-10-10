@@ -44,12 +44,11 @@ main {
 nav {
   z-index: 50;
   position: fixed;
-  height: 100%;
   width: 100%;
   padding: 25px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 nav ul {
   width: 30%;
@@ -65,13 +64,6 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
 }
-nav ul li a span {
-  opacity: 0;
-  transition: all 0.2s ease;
-}
-nav ul li a:hover span, nav ul li a.active span {
-  opacity: 1;
-}
 nav ul:nth-child(1) li a::after {
   content: "";
   position: absolute;
@@ -86,8 +78,18 @@ nav ul:nth-child(1) li a:hover::after {
   width: 100%;
 }
 nav ul:nth-child(2) {
+  flex-direction: row;
+  gap: 1em;
+  justify-content: right;
   align-items: flex-end;
   text-align: right;
+}
+nav ul:nth-child(2) li a {
+  opacity: 0.2;
+  transition: all 0.2s ease;
+}
+nav ul:nth-child(2) li a.active {
+  opacity: 1;
 }
 
 .scroll-down-container {
