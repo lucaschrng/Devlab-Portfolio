@@ -20,7 +20,7 @@ $fw-medium: 600;
 }
   
 body {
-    cursor: none;
+    // cursor: none;
     background-color: $bg-color;
     color: $font-color;
     font-family: neue-haas-grotesk-display, sans-serif;
@@ -35,6 +35,7 @@ body {
 }
 
 .cursor {
+    display: none;
     height: $fs-small;
     width: $fs-small;
     translate: -50% -50%;
