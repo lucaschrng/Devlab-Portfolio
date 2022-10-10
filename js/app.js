@@ -48,35 +48,17 @@ navButtonsBtn.forEach(button => {
     })
 });
 
-navButtonsBtn.forEach(button => {
-    button.addEventListener('click', () => {
-        click = true;
-        // navButtonsBtn.forEach(button2 => {
-        //     if (button2.classList.contains('active')) {
-        //         lastActive = button2;
-        //     }
-        //     if (button == button2) {
-        //         button2.classList.add('active');
-        //     }
-        //     else {
-        //         button2.classList.remove('active');
-        //     }
-        // });
-    })
-})
 
 navButtonsBtn.forEach(button => {
     button.addEventListener('mouseleave', () => {
-        if(!click) {
-            navButtonsBtn.forEach(button2 => {
-                if (button2 == lastActive && useLastActive) {
-                    button2.classList.add('active');
-                }
-                else {
-                    button2.classList.remove('active');
-                }
-            });
-        }
+        navButtonsBtn.forEach(button2 => {
+            if (button2 == lastActive && useLastActive) {
+                button2.classList.add('active');
+            }
+            else {
+                button2.classList.remove('active');
+            }
+        });
     })
 })
 
