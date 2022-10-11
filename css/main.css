@@ -9,6 +9,7 @@ body {
   font-family: neue-haas-grotesk-display, sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
+  color: #1E1E1E;
 }
 
 nav {
@@ -26,6 +27,31 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 2rem;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 4rem + 2px);
+}
+.home h1 {
+  font-size: 5rem;
+  line-height: 5rem;
+  display: flex;
+  flex-direction: column;
+  translate: 35%;
+}
+.home h1 span:nth-child(2) {
+  translate: -22%;
+}
+.home h1 span:nth-child(3) {
+  translate: -15%;
+}
+.home img {
+  height: 70vh;
+  translate: -15%;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=main.css.map */
