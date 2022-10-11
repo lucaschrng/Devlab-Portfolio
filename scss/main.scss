@@ -72,6 +72,7 @@ nav {
     justify-content: center;
     align-items: center;
     margin-top: 200px;
+    margin-bottom: 200px;
 
     &--decoration {
         &--wrapper {
@@ -144,6 +145,7 @@ nav {
             margin-bottom: 30px;
 
             button {
+                cursor: pointer;
                 font-size: 1.5rem;
                 font-weight: 700;
                 font-family: neue-haas-grotesk-display, sans-serif;
@@ -155,6 +157,15 @@ nav {
                 border-radius: 15px;
                 padding: 5px 15px;
                 z-index: 2;
+
+                &:hover {
+                    background-color: darken($color: $bg-clr, $amount:10);
+                }
+
+                &:active {
+                    box-shadow: none;
+                    translate: 1px 1px;
+                }
             }
         }
     }

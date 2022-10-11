@@ -63,6 +63,7 @@ nav ul {
   justify-content: center;
   align-items: center;
   margin-top: 200px;
+  margin-bottom: 200px;
 }
 .about-me--decoration--wrapper {
   translate: 0px -100px;
@@ -127,6 +128,7 @@ nav ul {
   margin-bottom: 30px;
 }
 .about-me--content--buttons button {
+  cursor: pointer;
   font-size: 1.5rem;
   font-weight: 700;
   font-family: neue-haas-grotesk-display, sans-serif;
@@ -138,6 +140,13 @@ nav ul {
   border-radius: 15px;
   padding: 5px 15px;
   z-index: 2;
+}
+.about-me--content--buttons button:hover {
+  background-color: #e4d3b9;
+}
+.about-me--content--buttons button:active {
+  box-shadow: none;
+  translate: 1px 1px;
 }
 
 /*# sourceMappingURL=main.css.map */
