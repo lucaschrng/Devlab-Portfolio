@@ -16,11 +16,15 @@ body {
 }
 
 nav {
+    position: fixed;
+    width: 100%;
+    background-color: $bg-clr;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     box-shadow: 0 2px 0 0 $darker-clr;
+    z-index: 100;
 
     a {
         color: $darker-clr;
@@ -38,7 +42,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 1rem*4 + 2px);
+    height: 100vh;
 
     h1 {
         font-size: 5rem;
