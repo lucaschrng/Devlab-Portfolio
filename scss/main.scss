@@ -7,10 +7,14 @@ $darker-clr: #1E1E1E;
     box-sizing: border-box;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 body {
     background-color: $bg-clr;
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     font-weight: 700;
     color: $darker-clr;
 }
@@ -22,7 +26,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1.5rem 3.2rem;
     box-shadow: 0 2px 0 0 $darker-clr;
     z-index: 100;
 
@@ -34,7 +38,7 @@ nav {
     ul {
         list-style: none;
         display: flex;
-        gap: 2rem;
+        gap: 3.2rem;
     }
 }
 
@@ -45,8 +49,8 @@ nav {
     height: 100vh;
 
     h1 {
-        font-size: 5rem;
-        line-height: 5rem;
+        font-size: 7vh;
+        line-height: 7vh;
         display: flex;
         flex-direction: column;
         translate: 35%;
@@ -71,44 +75,43 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 200px;
-    margin-bottom: 200px;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
 
     &--decoration {
-        &--wrapper {
-            translate: 0px -100px;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr;
+        translate: 0px -20%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
 
-            img {
-                height: 50vh;
-                rotate: -35deg;
-                grid-column: 1;
-                grid-row: 1;
-                z-index: -1;
-            }
+        img {
+            height: 50vh;
+            rotate: -35deg;
+            grid-column: 1;
+            grid-row: 1;
+            z-index: -1;
+        }
 
-            span {
-                display: flex;
-                justify-content: end;
-                align-items: flex-end;
-                color: #F2EADE;
-                font-size: 6rem;
-                grid-column: 1;
-                grid-row: 1;
-                width: 30%;
-                height: 50%;
-            }
+        span {
+            display: flex;
+            justify-content: end;
+            align-items: flex-end;
+            color: #F2EADE;
+            font-size: 13vh;
+            grid-column: 1;
+            grid-row: 1;
+            width: 30%;
+            height: 50%;
+            rotate: -10deg;
         }
     }
 
     &--content {
         display: grid;
-        grid-template-columns: 3fr 50px 1fr;
+        grid-template-columns: 3fr 5vh 1fr;
         width: 50vh;
         height: 50vh;
-        translate: -90px;
+        translate: -20%;
 
         &--text {
             background-color: $bg-clr;
@@ -117,16 +120,16 @@ nav {
             border-radius: 40px;
             grid-column: 1/3;
             grid-row: 1;
-            padding: 2.3rem 2.5rem;
             display: grid;
             rotate: 8deg;
 
             p {
-                font-size: 1.5rem;
-                line-height: 1.80rem;
+                font-size: 3vh;
+                line-height: 3vh;
                 grid-column: 1;
                 grid-row: 1;
                 font-weight: 600;
+                padding: 1.5em 1.7em;
                 opacity: 0;
 
                 &:nth-child(1) {
@@ -142,11 +145,11 @@ nav {
             grid-column: 2/4;
             grid-row: 1;
             align-self: flex-end;
-            margin-bottom: 30px;
+            margin-bottom: 2em;
 
             button {
                 cursor: pointer;
-                font-size: 1.5rem;
+                font-size: 2.5vh;
                 font-weight: 700;
                 font-family: neue-haas-grotesk-display, sans-serif;
                 white-space:nowrap;
@@ -154,8 +157,8 @@ nav {
                 background-color: $bg-clr;
                 border: #1E1E1E 2px solid;
                 box-shadow: #1E1E1E 1px 1px 0 0;
-                border-radius: 15px;
-                padding: 5px 15px;
+                border-radius: 0.5em;
+                padding: 0.3em 0.5em;
                 z-index: 2;
 
                 &:hover {
