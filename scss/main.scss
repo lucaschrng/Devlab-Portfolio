@@ -62,3 +62,96 @@ nav {
         z-index: -1;
     }
 }
+
+.about-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+
+    &--decoration {
+        &--wrapper {
+            translate: 0px -100px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+
+            img {
+                height: 50vh;
+                rotate: -35deg;
+                grid-column: 1;
+                grid-row: 1;
+                z-index: -1;
+            }
+
+            span {
+                display: flex;
+                justify-content: end;
+                align-items: flex-end;
+                color: #F2EADE;
+                font-size: 6rem;
+                grid-column: 1;
+                grid-row: 1;
+                width: 30%;
+                height: 50%;
+            }
+        }
+    }
+
+    &--content {
+        display: grid;
+        grid-template-columns: 3fr 50px 1fr;
+        width: 50vh;
+        height: 50vh;
+        translate: -90px;
+
+        &--text {
+            background-color: $bg-clr;
+            border: #1E1E1E 2px solid;
+            box-shadow: 1px 1px 0 0 $darker-clr;
+            border-radius: 40px;
+            grid-column: 1/3;
+            grid-row: 1;
+            padding: 2.3rem 2.5rem;
+            display: grid;
+            rotate: 8deg;
+
+            p {
+                font-size: 1.5rem;
+                line-height: 1.80rem;
+                grid-column: 1;
+                grid-row: 1;
+                font-weight: 600;
+                opacity: 0;
+
+                &:nth-child(1) {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &--buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            grid-column: 2/4;
+            grid-row: 1;
+            align-self: flex-end;
+            margin-bottom: 30px;
+
+            button {
+                font-size: 1.5rem;
+                font-weight: 700;
+                font-family: neue-haas-grotesk-display, sans-serif;
+                white-space:nowrap;
+                width: fit-content;
+                background-color: $bg-clr;
+                border: #1E1E1E 2px solid;
+                box-shadow: #1E1E1E 1px 1px 0 0;
+                border-radius: 15px;
+                padding: 5px 15px;
+                z-index: 2;
+            }
+        }
+    }
+}
