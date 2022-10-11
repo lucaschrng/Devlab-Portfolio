@@ -1,5 +1,7 @@
 $bg-clr: #F2EADE;
 $darker-clr: #1E1E1E;
+$perspective: 300;
+$parralaxStrenght: 40;
 
 * {
     margin: 0;
@@ -17,6 +19,21 @@ body {
     font-size: 2.4rem;
     font-weight: 700;
     color: $darker-clr;
+}
+
+main {
+    height: 100vh;
+    overflow-y: scroll;
+    perspective: calc($perspective*1px);
+
+    > section, .about-me--decoration, .about-me__second-page--decoration {
+        transform-style: preserve-3d;
+
+        img {
+            transform: translateZ(calc($parralaxStrenght * -1px));
+            scale: calc(1 + ($parralaxStrenght * 0.5)/$perspective);
+        }
+    }
 }
 
 nav {
@@ -99,7 +116,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 15vh;
+    margin-top: 20vh;
     margin-bottom: 15vh;
 
     &--decoration {
@@ -114,6 +131,7 @@ button {
             grid-column: 1;
             grid-row: 1;
             z-index: -1;
+
         }
 
         span {
@@ -190,6 +208,7 @@ button {
             grid-row: 1;
             rotate: -25deg;
             z-index: -1;
+
         }
 
         span {

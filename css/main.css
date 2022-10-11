@@ -16,6 +16,19 @@ body {
   color: #1E1E1E;
 }
 
+main {
+  height: 100vh;
+  overflow-y: scroll;
+  perspective: 300px;
+}
+main > section, main .about-me--decoration, main .about-me__second-page--decoration {
+  transform-style: preserve-3d;
+}
+main > section img, main .about-me--decoration img, main .about-me__second-page--decoration img {
+  transform: translateZ(-40px);
+  scale: 1.0666666667;
+}
+
 nav {
   position: fixed;
   width: 100%;
@@ -88,7 +101,7 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 15vh;
+  margin-top: 20vh;
   margin-bottom: 15vh;
 }
 .about-me--decoration {
