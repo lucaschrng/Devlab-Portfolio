@@ -1,5 +1,34 @@
+$bg-clr: #F2EADE;
+$darker-clr: #1E1E1E;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: $bg-clr;
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 0 0 $darker-clr;
+
+    a {
+        color: $darker-clr;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+    }
 }

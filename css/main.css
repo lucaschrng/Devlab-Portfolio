@@ -4,4 +4,28 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #F2EADE;
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 0 0 #1E1E1E;
+}
+nav a {
+  color: #1E1E1E;
+  text-decoration: none;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
 /*# sourceMappingURL=main.css.map */
