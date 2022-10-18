@@ -232,4 +232,67 @@ button:active {
   opacity: 1;
 }
 
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 6rem;
+  width: min-content;
+  margin: 0 auto;
+  gap: 10rem;
+  margin-top: 10rem;
+}
+.projects h2 {
+  font-size: 6rem;
+  grid-column: 1;
+  grid-row: 1;
+}
+.projects > img {
+  height: 50vh;
+  grid-column: 1;
+  grid-row: 1;
+  translate: -20rem 2rem;
+}
+.projects--container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10rem;
+}
+.projects--container--card {
+  width: 100%;
+}
+.projects--container--card button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0;
+}
+.projects--container--card button a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.projects--container--card button a img {
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
+  filter: saturate(0);
+  border-radius: 3rem;
+  padding: 5.5rem;
+}
+.projects--container--card button:hover > a img {
+  filter: saturate(1);
+}
+.projects--container--card h3, .projects--container--card h4 {
+  white-space: nowrap;
+  padding: 0 1rem;
+}
+.projects--container--card h3 {
+  font-size: 2.4rem;
+  line-height: 1em;
+  margin-top: 1em;
+}
+.projects--container--card h4 {
+  font-weight: 500;
+}
+
 /*# sourceMappingURL=main.css.map */
