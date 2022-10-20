@@ -2,6 +2,7 @@ let studiesBtn = document.querySelectorAll('.about-me--content--buttons button')
 let studiesTxt = document.querySelectorAll('.about-me--content--text p');
 let skillsBtn = document.querySelectorAll('.about-me__second-page--content--buttons button');
 let skillsTxt = document.querySelectorAll('.about-me__second-page--content--text p');
+let mailBtn = document.querySelector('.mail-button');
 
 for (let i = 0; i < studiesBtn.length; i++) {
     studiesBtn[i].addEventListener('click', () => {
@@ -28,3 +29,11 @@ for (let i = 0; i < skillsBtn.length; i++) {
         })
     })
 }
+
+mailBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText('charoing.lucas@gmail.com');
+    mailBtn.classList.add('anim');
+    setTimeout(() => {
+        mailBtn.classList.remove('anim');
+    }, 3000);
+})

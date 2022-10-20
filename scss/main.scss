@@ -338,3 +338,75 @@ button {
         }
     }
 }
+
+.contact {
+    position: relative;
+    max-width: 70rem;
+    margin: 50rem auto 30vh auto;
+
+    h2 {
+        color: #F2EADE;
+        font-size: 6rem;
+        grid-column: 1;
+        grid-row: 1;
+        margin-bottom: 4rem;
+    }
+
+    button {
+        position: relative;
+        padding: 0;
+
+        a {
+            font-size: 6rem;
+            padding: 0em 0.5em;
+            text-decoration: none;
+            color: #1E1E1E;
+        }
+    }
+
+    img {
+        position: absolute;
+        height: 40rem;
+        top: 0;
+        left: 0;
+        translate: -10rem -10rem;
+    }
+
+    // .mail-button.anim {
+    //     animation: 1s ease-out 0s 1 reverse fade;
+    // }
+
+    .mail-button::before {
+        content: 'Copied';
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #1E1E1E;
+        background-color: #F2EADE;
+        font-size: 3rem;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        border-radius: inherit;
+    }
+
+    .mail-button.anim::before {
+        animation: 3s ease 0s 1 normal fade;
+    }
+
+    &--infos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+@keyframes fade{
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    80% {opacity: 1;}
+    100% {opacity: 0;}
+}
