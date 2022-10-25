@@ -270,14 +270,20 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  border-radius: inherit;
 }
 .projects--container--card button a img {
   height: 300px;
   width: 300px;
   object-fit: contain;
   filter: saturate(0);
-  border-radius: 3rem;
+  border-radius: inherit;
   padding: 5.5rem;
+}
+.projects--container--card button a img.cover {
+  object-fit: cover;
+  padding: 0;
 }
 .projects--container--card button:hover > a img {
   filter: saturate(1);

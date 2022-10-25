@@ -305,14 +305,21 @@ button {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    overflow: hidden;
+                    border-radius: inherit;
 
                     img {
                         height: 300px;
                         width: 300px;
                         object-fit: contain;
                         filter: saturate(0);
-                        border-radius: 3rem;
+                        border-radius: inherit;
                         padding: 5.5rem;
+
+                        &.cover {
+                            object-fit: cover;
+                            padding: 0;
+                        }
                     }
                 }
 
