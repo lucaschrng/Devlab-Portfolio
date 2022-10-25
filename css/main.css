@@ -70,11 +70,22 @@ nav ul {
 .home h1 span:nth-child(3) {
   translate: -15%;
 }
+@media screen and (max-width: 1200px) {
+  .home h1 {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+}
 .home img {
   height: 70vh;
   max-height: 70rem;
   translate: -15%;
   z-index: -1;
+}
+@media screen and (max-width: 1200px) {
+  .home img {
+    max-height: 50rem;
+  }
 }
 
 button {
@@ -90,6 +101,11 @@ button {
   border-radius: 0.5em;
   padding: 0.3em 0.5em;
   z-index: 2;
+}
+@media screen and (max-width: 1200px) {
+  button {
+    font-size: 2.4rem;
+  }
 }
 button:hover {
   background-color: #e4d3b9;
@@ -119,6 +135,11 @@ button:active {
   grid-row: 1;
   z-index: -1;
 }
+@media screen and (max-width: 1200px) {
+  .about-me--decoration img {
+    max-height: 40rem;
+  }
+}
 .about-me--decoration span {
   display: flex;
   justify-content: end;
@@ -131,12 +152,23 @@ button:active {
   height: 50%;
   rotate: -10deg;
 }
+@media screen and (max-width: 1200px) {
+  .about-me--decoration span {
+    font-size: 6rem;
+  }
+}
 .about-me--content {
   display: grid;
   grid-template-columns: 3fr 5rem 1fr;
   width: 50rem;
   height: 50rem;
   translate: -35%;
+}
+@media screen and (max-width: 1200px) {
+  .about-me--content {
+    width: 40rem;
+    height: 40rem;
+  }
 }
 .about-me--content--text {
   background-color: #F2EADE;
@@ -160,6 +192,12 @@ button:active {
 .about-me--content--text p:nth-child(1) {
   opacity: 1;
 }
+@media screen and (max-width: 1200px) {
+  .about-me--content--text p {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+  }
+}
 .about-me--content--buttons {
   display: flex;
   flex-direction: column;
@@ -168,6 +206,11 @@ button:active {
   grid-row: 1;
   align-self: flex-end;
   margin-bottom: 2em;
+}
+@media screen and (max-width: 1200px) {
+  .about-me--content--buttons {
+    margin-bottom: 1em;
+  }
 }
 
 .about-me__second-page {
@@ -180,12 +223,22 @@ button:active {
   translate: -20% 0;
   z-index: -1;
 }
+@media screen and (max-width: 1200px) {
+  .about-me__second-page--decoration {
+    translate: -20% 5%;
+  }
+}
 .about-me__second-page--decoration img {
   max-height: 70rem;
   grid-column: 1;
   grid-row: 1;
   rotate: -25deg;
   z-index: -1;
+}
+@media screen and (max-width: 1200px) {
+  .about-me__second-page--decoration img {
+    max-height: 50rem;
+  }
 }
 .about-me__second-page--decoration span {
   color: #F2EADE;
@@ -198,6 +251,11 @@ button:active {
   grid-column: 1;
   grid-row: 1;
   rotate: 15deg;
+}
+@media screen and (max-width: 1200px) {
+  .about-me__second-page--decoration span {
+    font-size: 6rem;
+  }
 }
 .about-me__second-page--content {
   width: min-content;
@@ -233,6 +291,12 @@ button:active {
 .about-me__second-page--content--text p:nth-child(1) {
   opacity: 1;
 }
+@media screen and (max-width: 1200px) {
+  .about-me__second-page--content--text p {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+  }
+}
 
 .projects {
   display: grid;
@@ -243,10 +307,20 @@ button:active {
   gap: 10rem;
   padding-top: 20rem;
 }
+@media screen and (max-width: 1200px) {
+  .projects {
+    gap: 5rem;
+  }
+}
 .projects h2 {
   font-size: 6rem;
   grid-column: 1;
   grid-row: 1;
+}
+@media screen and (max-width: 1200px) {
+  .projects h2 {
+    font-size: 4rem;
+  }
 }
 .projects > img {
   height: 50rem;
@@ -254,10 +328,20 @@ button:active {
   grid-row: 1;
   translate: -20rem -5rem;
 }
+@media screen and (max-width: 1200px) {
+  .projects > img {
+    height: 40rem;
+  }
+}
 .projects--container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5rem;
+}
+@media screen and (max-width: 1200px) {
+  .projects--container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .projects--container--card {
   width: 100%;
@@ -276,8 +360,8 @@ button:active {
   border-radius: inherit;
 }
 .projects--container--card button a img {
-  height: 300px;
-  width: 300px;
+  height: 30rem;
+  width: 30rem;
   object-fit: contain;
   filter: saturate(0);
   border-radius: inherit;
@@ -286,6 +370,12 @@ button:active {
 .projects--container--card button a img.cover {
   object-fit: cover;
   padding: 0;
+}
+@media screen and (max-width: 1400px) {
+  .projects--container--card button a img {
+    height: 25rem;
+    width: 25rem;
+  }
 }
 .projects--container--card button:hover > a img {
   filter: saturate(1);
@@ -308,12 +398,23 @@ button:active {
   max-width: 70rem;
   margin: 50rem auto 25vh auto;
 }
+@media screen and (max-width: 1200px) {
+  .contact {
+    max-width: 50rem;
+    margin: 30rem auto 25vh auto;
+  }
+}
 .contact h2 {
   color: #F2EADE;
   font-size: 6rem;
   grid-column: 1;
   grid-row: 1;
   margin-bottom: 4rem;
+}
+@media screen and (max-width: 1200px) {
+  .contact h2 {
+    font-size: 4rem;
+  }
 }
 .contact button {
   position: relative;
@@ -325,12 +426,22 @@ button:active {
   text-decoration: none;
   color: #1E1E1E;
 }
+@media screen and (max-width: 1200px) {
+  .contact button a {
+    font-size: 4rem;
+  }
+}
 .contact img {
   position: absolute;
   height: 40rem;
   top: 0;
   left: 0;
   translate: -10rem -10rem;
+}
+@media screen and (max-width: 1200px) {
+  .contact img {
+    height: 30rem;
+  }
 }
 .contact .mail-button::before {
   content: "Copied";
