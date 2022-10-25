@@ -24,6 +24,7 @@ body {
 main {
     height: 100vh;
     overflow-y: scroll;
+    scroll-behavior: smooth;
     perspective: calc($perspective*1px);
 
     > section, .about-me--decoration, .about-me__second-page--decoration {
@@ -37,7 +38,7 @@ main {
 }
 
 nav {
-    position: fixed;
+    position: absolute;
     width: 100%;
     background-color: $bg-clr;
     display: flex;
@@ -66,8 +67,8 @@ nav {
     height: 100vh;
 
     h1 {
-        font-size: 7vh;
-        line-height: 7vh;
+        font-size: 7rem;
+        line-height: 7rem;
         display: flex;
         flex-direction: column;
         translate: 35%;
@@ -83,6 +84,7 @@ nav {
 
     img {
         height: 70vh;
+        max-height: 70rem;
         translate: -15%;
         z-index: -1;
     }
@@ -90,7 +92,7 @@ nav {
 
 button {
     cursor: pointer;
-    font-size: 2.5vh;
+    font-size: 3rem;
     font-weight: 700;
     font-family: neue-haas-grotesk-display, sans-serif;
     white-space:nowrap;
@@ -116,17 +118,17 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20vh;
+    padding-top: 30vh;
     margin-bottom: 15vh;
 
     &--decoration {
-        translate: 0px -20%;
+        translate: -5% -20%;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
 
         img {
-            height: 50vh;
+            max-height: 50rem;
             rotate: -35deg;
             grid-column: 1;
             grid-row: 1;
@@ -139,7 +141,7 @@ button {
             justify-content: end;
             align-items: flex-end;
             color: #F2EADE;
-            font-size: 8vh;
+            font-size: 8rem;
             grid-column: 1;
             grid-row: 1;
             width: 30%;
@@ -150,14 +152,14 @@ button {
 
     &--content {
         display: grid;
-        grid-template-columns: 3fr 5vh 1fr;
-        width: 50vh;
-        height: 50vh;
-        translate: -20%;
+        grid-template-columns: 3fr 5rem 1fr;
+        width: 50rem;
+        height: 50rem;
+        translate: -35%;
 
         &--text {
             background-color: $bg-clr;
-            border: #1E1E1E 2px solid;
+            border: $darker-clr 2px solid;
             box-shadow: 1px 1px 0 0 $darker-clr;
             border-radius: 40px;
             grid-column: 1/3;
@@ -166,8 +168,8 @@ button {
             rotate: 8deg;
 
             p {
-                font-size: 3vh;
-                line-height: 3vh;
+                font-size: 3rem;
+                line-height: 3rem;
                 grid-column: 1;
                 grid-row: 1;
                 font-weight: 600;
@@ -199,11 +201,11 @@ button {
     &--decoration {
         display: grid;
         grid-template-rows: min-content;
-        translate: -30% 0;
+        translate: -20% 0;
         z-index: -1;
 
         img {
-            height: 60vh;
+            max-height: 70rem;
             grid-column: 1;
             grid-row: 1;
             rotate: -25deg;
@@ -213,7 +215,7 @@ button {
 
         span {
             color: $bg-clr;
-            font-size: 8vh;
+            font-size: 8rem;
             height: 65%;
             width: 100%;
             display: flex;
@@ -251,8 +253,8 @@ button {
             p {
                 grid-column: 1;
                 grid-row: 1;
-                font-size: 2.5vh;
-                line-height: 3vh;
+                font-size: 3rem;
+                line-height: 3.5rem;
                 font-weight: 600;
                 padding: 0.7rem;
                 opacity: 0;
@@ -272,7 +274,7 @@ button {
     width: min-content;
     margin: 0 auto;
     gap: 10rem;
-    margin-top: 10rem;
+    padding-top: 20rem;
 
     h2 {
         font-size: 6rem;
@@ -281,16 +283,16 @@ button {
     }
 
     > img {
-        height: 50vh;
+        height: 50rem;
         grid-column: 1;
         grid-row: 1;
-        translate: -20rem 2rem;
+        translate: -20rem -5rem;
     }
 
     &--container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 10rem;
+        gap: 5rem;
 
         &--card {
             width: 100%;
@@ -349,10 +351,10 @@ button {
 .contact {
     position: relative;
     max-width: 70rem;
-    margin: 50rem auto 30vh auto;
+    margin: 50rem auto 25vh auto;
 
     h2 {
-        color: #F2EADE;
+        color: $bg-clr;
         font-size: 6rem;
         grid-column: 1;
         grid-row: 1;
@@ -367,7 +369,7 @@ button {
             font-size: 6rem;
             padding: 0em 0.5em;
             text-decoration: none;
-            color: #1E1E1E;
+            color: $darker-clr;
         }
     }
 
@@ -379,18 +381,14 @@ button {
         translate: -10rem -10rem;
     }
 
-    // .mail-button.anim {
-    //     animation: 1s ease-out 0s 1 reverse fade;
-    // }
-
     .mail-button::before {
         content: 'Copied';
         position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #1E1E1E;
-        background-color: #F2EADE;
+        color: $darker-clr;
+        background-color: $bg-clr;
         font-size: 3rem;
         height: 100%;
         width: 100%;

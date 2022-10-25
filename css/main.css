@@ -19,6 +19,7 @@ body {
 main {
   height: 100vh;
   overflow-y: scroll;
+  scroll-behavior: smooth;
   perspective: 300px;
 }
 main > section, main .about-me--decoration, main .about-me__second-page--decoration {
@@ -30,7 +31,7 @@ main > section img, main .about-me--decoration img, main .about-me__second-page-
 }
 
 nav {
-  position: fixed;
+  position: absolute;
   width: 100%;
   background-color: #F2EADE;
   display: flex;
@@ -57,8 +58,8 @@ nav ul {
   height: 100vh;
 }
 .home h1 {
-  font-size: 7vh;
-  line-height: 7vh;
+  font-size: 7rem;
+  line-height: 7rem;
   display: flex;
   flex-direction: column;
   translate: 35%;
@@ -71,13 +72,14 @@ nav ul {
 }
 .home img {
   height: 70vh;
+  max-height: 70rem;
   translate: -15%;
   z-index: -1;
 }
 
 button {
   cursor: pointer;
-  font-size: 2.5vh;
+  font-size: 3rem;
   font-weight: 700;
   font-family: neue-haas-grotesk-display, sans-serif;
   white-space: nowrap;
@@ -101,17 +103,17 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20vh;
+  padding-top: 30vh;
   margin-bottom: 15vh;
 }
 .about-me--decoration {
-  translate: 0px -20%;
+  translate: -5% -20%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
 }
 .about-me--decoration img {
-  height: 50vh;
+  max-height: 50rem;
   rotate: -35deg;
   grid-column: 1;
   grid-row: 1;
@@ -122,7 +124,7 @@ button:active {
   justify-content: end;
   align-items: flex-end;
   color: #F2EADE;
-  font-size: 8vh;
+  font-size: 8rem;
   grid-column: 1;
   grid-row: 1;
   width: 30%;
@@ -131,10 +133,10 @@ button:active {
 }
 .about-me--content {
   display: grid;
-  grid-template-columns: 3fr 5vh 1fr;
-  width: 50vh;
-  height: 50vh;
-  translate: -20%;
+  grid-template-columns: 3fr 5rem 1fr;
+  width: 50rem;
+  height: 50rem;
+  translate: -35%;
 }
 .about-me--content--text {
   background-color: #F2EADE;
@@ -147,8 +149,8 @@ button:active {
   rotate: 8deg;
 }
 .about-me--content--text p {
-  font-size: 3vh;
-  line-height: 3vh;
+  font-size: 3rem;
+  line-height: 3rem;
   grid-column: 1;
   grid-row: 1;
   font-weight: 600;
@@ -175,11 +177,11 @@ button:active {
 .about-me__second-page--decoration {
   display: grid;
   grid-template-rows: min-content;
-  translate: -30% 0;
+  translate: -20% 0;
   z-index: -1;
 }
 .about-me__second-page--decoration img {
-  height: 60vh;
+  max-height: 70rem;
   grid-column: 1;
   grid-row: 1;
   rotate: -25deg;
@@ -187,7 +189,7 @@ button:active {
 }
 .about-me__second-page--decoration span {
   color: #F2EADE;
-  font-size: 8vh;
+  font-size: 8rem;
   height: 65%;
   width: 100%;
   display: flex;
@@ -222,8 +224,8 @@ button:active {
 .about-me__second-page--content--text p {
   grid-column: 1;
   grid-row: 1;
-  font-size: 2.5vh;
-  line-height: 3vh;
+  font-size: 3rem;
+  line-height: 3.5rem;
   font-weight: 600;
   padding: 0.7rem;
   opacity: 0;
@@ -239,7 +241,7 @@ button:active {
   width: min-content;
   margin: 0 auto;
   gap: 10rem;
-  margin-top: 10rem;
+  padding-top: 20rem;
 }
 .projects h2 {
   font-size: 6rem;
@@ -247,15 +249,15 @@ button:active {
   grid-row: 1;
 }
 .projects > img {
-  height: 50vh;
+  height: 50rem;
   grid-column: 1;
   grid-row: 1;
-  translate: -20rem 2rem;
+  translate: -20rem -5rem;
 }
 .projects--container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10rem;
+  gap: 5rem;
 }
 .projects--container--card {
   width: 100%;
@@ -304,7 +306,7 @@ button:active {
 .contact {
   position: relative;
   max-width: 70rem;
-  margin: 50rem auto 30vh auto;
+  margin: 50rem auto 25vh auto;
 }
 .contact h2 {
   color: #F2EADE;
