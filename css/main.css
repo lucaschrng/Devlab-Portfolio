@@ -19,6 +19,7 @@ body {
 main {
   height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   perspective: 300px;
 }
@@ -41,6 +42,11 @@ nav {
   box-shadow: 0 2px 0 0 #1E1E1E;
   z-index: 100;
 }
+@media screen and (max-width: 900px) {
+  nav {
+    display: none;
+  }
+}
 nav a {
   color: #1E1E1E;
   text-decoration: none;
@@ -57,6 +63,11 @@ nav ul {
   align-items: center;
   height: 100vh;
 }
+@media screen and (max-width: 900px) {
+  .home {
+    display: grid;
+  }
+}
 .home h1 {
   font-size: 7rem;
   line-height: 7rem;
@@ -67,13 +78,33 @@ nav ul {
 .home h1 span:nth-child(2) {
   translate: -22%;
 }
+@media screen and (max-width: 900px) {
+  .home h1 span:nth-child(2) {
+    translate: 0;
+  }
+}
 .home h1 span:nth-child(3) {
   translate: -15%;
+}
+@media screen and (max-width: 900px) {
+  .home h1 span:nth-child(3) {
+    translate: 0;
+  }
 }
 @media screen and (max-width: 1200px) {
   .home h1 {
     font-size: 5rem;
     line-height: 5rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .home h1 {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 3rem;
+    line-height: 3rem;
+    translate: 0;
+    text-align: center;
   }
 }
 .home img {
@@ -85,6 +116,13 @@ nav ul {
 @media screen and (max-width: 1200px) {
   .home img {
     max-height: 50rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .home img {
+    grid-column: 1;
+    grid-row: 1;
+    translate: 0 0;
   }
 }
 
@@ -122,11 +160,23 @@ button:active {
   padding-top: 30vh;
   margin-bottom: 15vh;
 }
+@media screen and (max-width: 900px) {
+  .about-me {
+    display: grid;
+  }
+}
 .about-me--decoration {
   translate: -5% -20%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+}
+@media screen and (max-width: 900px) {
+  .about-me--decoration {
+    grid-column: 1;
+    grid-row: 1;
+    translate: 0 0;
+  }
 }
 .about-me--decoration img {
   max-height: 50rem;
@@ -170,6 +220,19 @@ button:active {
     height: 40rem;
   }
 }
+@media screen and (max-width: 900px) {
+  .about-me--content {
+    grid-column: 1;
+    grid-row: 1;
+    translate: 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+}
 .about-me--content--text {
   background-color: #F2EADE;
   border: #1E1E1E 2px solid;
@@ -179,6 +242,13 @@ button:active {
   grid-row: 1;
   display: grid;
   rotate: 8deg;
+}
+@media screen and (max-width: 900px) {
+  .about-me--content--text {
+    rotate: 0deg;
+    width: 90vw;
+    border-radius: 0.5em;
+  }
 }
 .about-me--content--text p {
   font-size: 3rem;
@@ -198,6 +268,11 @@ button:active {
     line-height: 2.4rem;
   }
 }
+@media screen and (max-width: 900px) {
+  .about-me--content--text p {
+    padding: 1em 1.2em;
+  }
+}
 .about-me--content--buttons {
   display: flex;
   flex-direction: column;
@@ -212,10 +287,26 @@ button:active {
     margin-bottom: 1em;
   }
 }
+@media screen and (max-width: 900px) {
+  .about-me--content--buttons {
+    margin-bottom: 0;
+    align-self: center;
+  }
+  .about-me--content--buttons button {
+    width: 90vw;
+  }
+}
 
 .about-me__second-page {
   display: flex;
   justify-content: center;
+}
+@media screen and (max-width: 900px) {
+  .about-me__second-page {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .about-me__second-page--decoration {
   display: grid;
@@ -226,6 +317,13 @@ button:active {
 @media screen and (max-width: 1200px) {
   .about-me__second-page--decoration {
     translate: -20% 5%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .about-me__second-page--decoration {
+    grid-column: 1;
+    grid-row: 1;
+    translate: 0 0;
   }
 }
 .about-me__second-page--decoration img {
@@ -257,6 +355,11 @@ button:active {
     font-size: 6rem;
   }
 }
+@media screen and (max-width: 900px) {
+  .about-me__second-page--decoration span {
+    display: none;
+  }
+}
 .about-me__second-page--content {
   width: min-content;
   height: min-content;
@@ -270,11 +373,40 @@ button:active {
   border-radius: 30px;
   translate: 20% 20%;
 }
+@media screen and (max-width: 900px) {
+  .about-me__second-page--content {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 90vw;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    translate: 0;
+    margin: 0 auto;
+    background-color: transparent;
+  }
+}
 .about-me__second-page--content--buttons {
   display: flex;
   flex-wrap: nowrap;
   margin-bottom: 2rem;
   gap: 1rem;
+}
+@media screen and (max-width: 900px) {
+  .about-me__second-page--content--buttons {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .about-me__second-page--content--buttons button {
+    width: 90vw;
+  }
 }
 .about-me__second-page--content--text {
   display: grid;
@@ -295,6 +427,15 @@ button:active {
   .about-me__second-page--content--text p {
     font-size: 2.4rem;
     line-height: 2.8rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .about-me__second-page--content--text p {
+    padding: 1em 1.2em;
+    background-color: #F2EADE;
+    border: #1E1E1E 2px solid;
+    box-shadow: 1px 1px 0 0 #1E1E1E;
+    border-radius: 0.5em;
   }
 }
 
@@ -322,6 +463,12 @@ button:active {
     font-size: 4rem;
   }
 }
+@media screen and (max-width: 900px) {
+  .projects h2 {
+    text-align: center;
+    width: 100vw;
+  }
+}
 .projects > img {
   height: 50rem;
   grid-column: 1;
@@ -331,6 +478,11 @@ button:active {
 @media screen and (max-width: 1200px) {
   .projects > img {
     height: 40rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .projects > img {
+    translate: 0 0;
   }
 }
 .projects--container {
@@ -343,8 +495,22 @@ button:active {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+@media screen and (max-width: 900px) {
+  .projects--container {
+    grid-template-columns: 1fr;
+  }
+}
 .projects--container--card {
   width: 100%;
+}
+@media screen and (max-width: 900px) {
+  .projects--container--card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
 }
 .projects--container--card button {
   display: flex;
@@ -404,6 +570,14 @@ button:active {
     margin: 30rem auto 25vh auto;
   }
 }
+@media screen and (max-width: 900px) {
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .contact h2 {
   color: #F2EADE;
   font-size: 6rem;
@@ -441,6 +615,11 @@ button:active {
 @media screen and (max-width: 1200px) {
   .contact img {
     height: 30rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .contact img {
+    translate: 0 -10rem;
   }
 }
 .contact .mail-button::before {
