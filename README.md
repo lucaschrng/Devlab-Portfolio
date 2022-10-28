@@ -1,6 +1,6 @@
 # **DevLab Portfolio**
 
-My first project of this year is creating a portfolio website. In order to visit my website, click [this link](https://devlab-portfolio-xi.vercel.app/)
+My first project of the year is creating a portfolio website. In order to visit my website, click [this link](https://devlab-portfolio-xi.vercel.app/)
 
 ## **How to install**
 
