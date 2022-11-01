@@ -179,7 +179,7 @@ button:active {
   }
 }
 .about-me--decoration img {
-  max-height: 50rem;
+  height: 50rem;
   rotate: -35deg;
   grid-column: 1;
   grid-row: 1;
@@ -187,7 +187,7 @@ button:active {
 }
 @media screen and (max-width: 1200px) {
   .about-me--decoration img {
-    max-height: 40rem;
+    height: 40rem;
   }
 }
 .about-me--decoration span {
@@ -327,7 +327,7 @@ button:active {
   }
 }
 .about-me__second-page--decoration img {
-  max-height: 70rem;
+  height: 70rem;
   grid-column: 1;
   grid-row: 1;
   rotate: -25deg;
@@ -335,7 +335,7 @@ button:active {
 }
 @media screen and (max-width: 1200px) {
   .about-me__second-page--decoration img {
-    max-height: 50rem;
+    height: 50rem;
   }
 }
 .about-me__second-page--decoration span {

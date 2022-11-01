@@ -187,14 +187,14 @@ button {
         }
 
         img {
-            max-height: 50rem;
+            height: 50rem;
             rotate: -35deg;
             grid-column: 1;
             grid-row: 1;
             z-index: -1;
 
             @include breakpoint(1200px) {
-                max-height: 40rem;
+                height: 40rem;
             }
         }
 
@@ -332,14 +332,14 @@ button {
         }
 
         img {
-            max-height: 70rem;
+            height: 70rem;
             grid-column: 1;
             grid-row: 1;
             rotate: -25deg;
             z-index: -1;
 
             @include breakpoint(1200px) {
-                max-height: 50rem;
+                height: 50rem;
             }
         }
 
