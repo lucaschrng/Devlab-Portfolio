@@ -126,7 +126,7 @@ nav ul {
   }
 }
 
-button {
+button, .projects a, .contact a {
   cursor: pointer;
   font-size: 3rem;
   font-weight: 700;
@@ -141,14 +141,14 @@ button {
   z-index: 2;
 }
 @media screen and (max-width: 1200px) {
-  button {
+  button, .projects a, .contact a {
     font-size: 2.4rem;
   }
 }
-button:hover {
+button:hover, button:focus, .projects a:hover, .projects a:focus, .contact a:hover, .contact a:focus {
   background-color: #e4d3b9;
 }
-button:active {
+button:active, .projects a:active, .contact a:active {
   box-shadow: none;
   translate: 1px 1px;
 }
@@ -512,20 +512,16 @@ button:active {
     width: 100vw;
   }
 }
-.projects--container--card button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 0;
-}
-.projects--container--card button a {
+.projects--container--card a {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   border-radius: inherit;
+  border-radius: 0.5em;
+  padding: 0;
 }
-.projects--container--card button a img {
+.projects--container--card a img {
   height: 30rem;
   width: 30rem;
   object-fit: contain;
@@ -533,17 +529,17 @@ button:active {
   border-radius: inherit;
   padding: 5.5rem;
 }
-.projects--container--card button a img.cover {
+.projects--container--card a img.cover {
   object-fit: cover;
   padding: 0;
 }
 @media screen and (max-width: 1400px) {
-  .projects--container--card button a img {
+  .projects--container--card a img {
     height: 25rem;
     width: 25rem;
   }
 }
-.projects--container--card button:hover > a img {
+.projects--container--card a:hover > img, .projects--container--card a:focus > img {
   filter: saturate(1);
 }
 .projects--container--card h3, .projects--container--card h4 {
@@ -590,18 +586,16 @@ button:active {
     font-size: 4rem;
   }
 }
-.contact button {
+.contact a, .contact button {
   position: relative;
-  padding: 0;
-}
-.contact button a {
   font-size: 6rem;
   padding: 0em 0.5em;
   text-decoration: none;
   color: #1E1E1E;
+  border-radius: 0.2em;
 }
 @media screen and (max-width: 1200px) {
-  .contact button a {
+  .contact a, .contact button {
     font-size: 4rem;
   }
 }
@@ -625,6 +619,8 @@ button:active {
 .contact .mail-button::before {
   content: "Copied";
   position: absolute;
+  left: 0;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
