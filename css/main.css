@@ -14,25 +14,26 @@ body {
   font-size: 2.4rem;
   font-weight: 700;
   color: #1E1E1E;
+  height: 100vh;
 }
 
 main {
-  height: 100vh;
+  height: 100%;
   overflow-y: scroll;
-  overflow-x: hidden;
   scroll-behavior: smooth;
   perspective: 300px;
 }
-main > section, main .about-me--decoration, main .about-me__second-page--decoration {
+main > div, main .about-me--decoration, main .about-me__second-page--decoration {
   transform-style: preserve-3d;
 }
-main > section img, main .about-me--decoration img, main .about-me__second-page--decoration img {
+main > div img, main .about-me--decoration img, main .about-me__second-page--decoration img {
   transform: translateZ(-40px);
   scale: 1.0666666667;
 }
 
 nav {
-  position: absolute;
+  position: sticky;
+  top: 0;
   width: 100%;
   background-color: #F2EADE;
   display: flex;
@@ -558,7 +559,7 @@ button:active, .projects a:active, .contact a:active {
 .contact {
   position: relative;
   max-width: 70rem;
-  margin: 50rem auto 25vh auto;
+  margin: 50rem auto 30vh auto;
 }
 @media screen and (max-width: 1200px) {
   .contact {

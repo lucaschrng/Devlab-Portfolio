@@ -22,16 +22,16 @@ body {
     font-size: 2.4rem;
     font-weight: 700;
     color: $darker-clr;
+    height: 100vh;
 }
 
 main {
-    height: 100vh;
+    height: 100%;
     overflow-y: scroll;
-    overflow-x: hidden;
     scroll-behavior: smooth;
     perspective: calc($perspective*1px);
 
-    > section, .about-me--decoration, .about-me__second-page--decoration {
+    > div, .about-me--decoration, .about-me__second-page--decoration {
         transform-style: preserve-3d;
 
         img {
@@ -42,7 +42,8 @@ main {
 }
 
 nav {
-    position: absolute;
+    position: sticky;
+    top: 0;
     width: 100%;
     background-color: $bg-clr;
     display: flex;
@@ -567,7 +568,7 @@ button, .projects a, .contact a {
 .contact {
     position: relative;
     max-width: 70rem;
-    margin: 50rem auto 25vh auto;
+    margin: 50rem auto 30vh auto;
 
     @include breakpoint(1200px) {
         max-width: 50rem;
