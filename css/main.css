@@ -1,3 +1,4 @@
+/* normalise */
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +6,7 @@
 }
 
 html {
+  /* allows to use rem units as 10px instead of 16px for easier calculations */
   font-size: 62.5%;
 }
 
@@ -21,17 +23,22 @@ main {
   height: 100%;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  /* perspective for parallax effect */
   perspective: 300px;
 }
 main > div, main .about-me--decoration, main .about-me__second-page--decoration {
+  /* set up for parrallax effect */
   transform-style: preserve-3d;
 }
 main > div img, main .about-me--decoration img, main .about-me__second-page--decoration img {
+  /* pushes elements in the back */
   transform: translateZ(-40px);
+  /* restore inital scale in order to only keep the parrallax effect */
   scale: 1.0666666667;
 }
 
 nav {
+  /* position sticky allows the nav to sit on top of the screen */
   position: sticky;
   top: 0;
   width: 100%;
@@ -140,6 +147,7 @@ button, .projects a, .contact a {
   border-radius: 0.5em;
   padding: 0.3em 0.5em;
   z-index: 2;
+  /* focus for tab navigation */
 }
 @media screen and (max-width: 1200px) {
   button, .projects a, .contact a {
@@ -521,6 +529,7 @@ button:active, .projects a:active, .contact a:active {
   border-radius: inherit;
   border-radius: 0.5em;
   padding: 0;
+  /* focus for tab navigation */
 }
 .projects--container--card a img {
   height: 30rem;

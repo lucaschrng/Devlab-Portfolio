@@ -1,9 +1,15 @@
 @use 'mixins' as *;
 
+// variables initialisation
+// prevent from repeating hexa codes
+// allows to easily experiment other colors themes
+
 $bg-clr: #F2EADE;
 $darker-clr: #1E1E1E;
 $perspective: 300;
 $parralaxStrenght: 40;
+
+/* normalise */
 
 * {
     margin: 0;
@@ -13,6 +19,7 @@ $parralaxStrenght: 40;
 
 
 html {
+    /* allows to use rem units as 10px instead of 16px for easier calculations */
     font-size: 62.5%;
 }
 
@@ -29,19 +36,24 @@ main {
     height: 100%;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    /* perspective for parallax effect */
     perspective: calc($perspective*1px);
 
     > div, .about-me--decoration, .about-me__second-page--decoration {
+        /* set up for parrallax effect */
         transform-style: preserve-3d;
 
         img {
+            /* pushes elements in the back */
             transform: translateZ(calc($parralaxStrenght * -1px));
+            /* restore inital scale in order to only keep the parrallax effect */
             scale: calc(1 + ($parralaxStrenght * 0.5)/$perspective);
         }
     }
 }
 
 nav {
+    /* position sticky allows the nav to sit on top of the screen */
     position: sticky;
     top: 0;
     width: 100%;
@@ -141,7 +153,7 @@ button, .projects a, .contact a {
     font-size: 3rem;
     font-weight: 700;
     font-family: neue-haas-grotesk-display, sans-serif;
-    white-space:nowrap;
+    white-space: nowrap;
     width: fit-content;
     background-color: $bg-clr;
     border: #1E1E1E 2px solid;
@@ -154,6 +166,7 @@ button, .projects a, .contact a {
         font-size: 2.4rem
     }
 
+    /* focus for tab navigation */
     &:hover, &:focus {
         background-color: darken($color: $bg-clr, $amount:10);
     }
@@ -542,6 +555,7 @@ button, .projects a, .contact a {
                     }
                 }
 
+                /* focus for tab navigation */
                 &:hover > img, &:focus > img {
                     filter: saturate(1);
                 }
