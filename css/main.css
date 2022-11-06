@@ -22,6 +22,7 @@ body {
 main {
   height: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   /* perspective for parallax effect */
   perspective: 300px;
@@ -69,7 +70,7 @@ nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 95vh;
 }
 @media screen and (max-width: 900px) {
   .home {
@@ -136,6 +137,7 @@ nav ul {
 
 button, .projects a, .contact a {
   cursor: pointer;
+  color: #1E1E1E;
   font-size: 3rem;
   font-weight: 700;
   font-family: neue-haas-grotesk-display, sans-serif;

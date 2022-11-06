@@ -35,6 +35,7 @@ body {
 main {
     height: 100%;
     overflow-y: scroll;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     /* perspective for parallax effect */
     perspective: calc($perspective*1px);
@@ -85,7 +86,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 95vh;
 
     @include breakpoint(900px) {
         display: grid;
@@ -150,6 +151,7 @@ nav {
 
 button, .projects a, .contact a {
     cursor: pointer;
+    color: $darker-clr;
     font-size: 3rem;
     font-weight: 700;
     font-family: neue-haas-grotesk-display, sans-serif;
