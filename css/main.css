@@ -541,6 +541,9 @@ button:active, .projects a:active, .contact a:active {
   border-radius: inherit;
   padding: 5.5rem;
 }
+.projects--container--card a img.get-your-poster--image {
+  padding: 3rem;
+}
 .projects--container--card a img.cover {
   object-fit: cover;
   padding: 0;

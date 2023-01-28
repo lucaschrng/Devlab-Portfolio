@@ -546,6 +546,10 @@ button, .projects a, .contact a {
                     border-radius: inherit;
                     padding: 5.5rem;
 
+                    &.get-your-poster--image {
+                        padding: 3rem;
+                    }
+
                     &.cover {
                         object-fit: cover;
                         padding: 0;
