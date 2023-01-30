@@ -1,7 +1,7 @@
 let studiesBtn = document.querySelectorAll('.about-me--content--buttons button');
 let studiesTxt = document.querySelectorAll('.about-me--content--text p');
 let skillsBtn = document.querySelectorAll('.about-me__second-page--content--buttons button');
-let skillsTxt = document.querySelectorAll('.about-me__second-page--content--text p');
+let skillsTxt = document.querySelectorAll('.about-me__second-page--content--text ul');
 let mailBtn = document.querySelector('.mail-button');
 
 for (let i = 0; i < studiesBtn.length; i++) {
@@ -21,10 +21,10 @@ for (let i = 0; i < skillsBtn.length; i++) {
     skillsBtn[i].addEventListener('click', () => {
         skillsTxt.forEach(skill => {
             if(skill == skillsTxt[i+1]) {
-                skill.style.opacity = 1;
+                skill.style.opacity = '1';
             }
             else {
-                skill.style.opacity = 0;
+                skill.style.opacity = '0';
             }
         })
     })

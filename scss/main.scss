@@ -425,6 +425,7 @@ button, .projects a, .contact a {
 
                 button {
                     width: 90vw;
+                    margin-bottom: 0;
                 }
             }
         }
@@ -432,7 +433,11 @@ button, .projects a, .contact a {
         &--text {
             display: grid;
 
-            p {
+            @include breakpoint(900px) {
+                width: 100%;
+            }
+
+            ul {
                 grid-column: 1;
                 grid-row: 1;
                 font-size: 3rem;
@@ -440,6 +445,10 @@ button, .projects a, .contact a {
                 font-weight: 600;
                 padding: 0.7rem;
                 opacity: 0;
+
+                > li {
+                    margin-left: 2rem;
+                }
 
                 &:nth-child(1) {
                     opacity: 1;

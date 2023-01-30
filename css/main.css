@@ -417,12 +417,18 @@ button:active, .projects a:active, .contact a:active {
   }
   .about-me__second-page--content--buttons button {
     width: 90vw;
+    margin-bottom: 0;
   }
 }
 .about-me__second-page--content--text {
   display: grid;
 }
-.about-me__second-page--content--text p {
+@media screen and (max-width: 900px) {
+  .about-me__second-page--content--text {
+    width: 100%;
+  }
+}
+.about-me__second-page--content--text ul {
   grid-column: 1;
   grid-row: 1;
   font-size: 3rem;
@@ -431,17 +437,20 @@ button:active, .projects a:active, .contact a:active {
   padding: 0.7rem;
   opacity: 0;
 }
-.about-me__second-page--content--text p:nth-child(1) {
+.about-me__second-page--content--text ul > li {
+  margin-left: 2rem;
+}
+.about-me__second-page--content--text ul:nth-child(1) {
   opacity: 1;
 }
 @media screen and (max-width: 1200px) {
-  .about-me__second-page--content--text p {
+  .about-me__second-page--content--text ul {
     font-size: 2.4rem;
     line-height: 2.8rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .about-me__second-page--content--text p {
+  .about-me__second-page--content--text ul {
     padding: 1em 1.2em;
     background-color: #F2EADE;
     border: #1E1E1E 2px solid;
